@@ -194,11 +194,46 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 }
 
 Return<RequestStatus> BiometricsFingerprint::cancel() {
+    if (fingerprint_type == 2) {
+        fingerprint_msg_t msg;
+        msg.type = FINGERPRINT_ERROR;
+        msg.data.error = FINGERPRINT_ERROR_CANCELED;
+        mDevice->notify(&msg);
+    }
+
     return ErrorFilter(mDevice->cancel(mDevice));
 }
 
+#define MAX_FINGERPRINTS 100
+
+typedef int (*enumerate_2_0)(struct fingerprint_device *dev, fingerprint_finger_id_t *results,
+        uint32_t *max_size);
+
 Return<RequestStatus> BiometricsFingerprint::enumerate()  {
-    return ErrorFilter(mDevice->enumerate(mDevice));
+    int ret = 0;
+
+    if (fingerprint_type == 2) {
+        fingerprint_finger_id_t results[MAX_FINGERPRINTS];
+        uint32_t n = MAX_FINGERPRINTS;
+        enumerate_2_0 enumerate = (enumerate_2_0) mDevice->enumerate;
+        ret = enumerate(mDevice, results, &n);
+
+        if (ret == 0 && mClientCallback != nullptr) {
+            ALOGD("Got %d enumerated templates", n);
+            for (uint32_t i = 0; i < n; i++) {
+                const uint64_t devId = reinterpret_cast<uint64_t>(mDevice);
+                const auto& fp = results[i];
+                ALOGD("onEnumerate(fid=%d, gid=%d)", fp.fid, fp.gid);
+                if (!mClientCallback->onEnumerate(devId, fp.fid, fp.gid, n - i - 1).isOk()) {
+                    ALOGE("failed to invoke fingerprint onEnumerate callback");
+                }
+            }
+        }
+    } else {
+        ret = mDevice->enumerate(mDevice);
+    }
+
+    return ErrorFilter(ret);
 }
 
 Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) {
@@ -207,6 +242,8 @@ Return<RequestStatus> BiometricsFingerprint::remove(uint32_t gid, uint32_t fid) 
 
 Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
         const hidl_string& storePath) {
+    int ret = 0;
+
     if (storePath.size() >= PATH_MAX || storePath.size() <= 0) {
         ALOGE("Bad path length: %zd", storePath.size());
         return RequestStatus::SYS_EINVAL;
@@ -215,8 +252,15 @@ Return<RequestStatus> BiometricsFingerprint::setActiveGroup(uint32_t gid,
         return RequestStatus::SYS_EINVAL;
     }
 
-    return ErrorFilter(mDevice->set_active_group(mDevice, gid,
-                                                    storePath.c_str()));
+    if (fingerprint_type == 2) {
+        ret = mDevice->set_active_group(mDevice, gid, storePath.c_str());
+        if ((ret > 0) && fp_type_2_is_goodix)
+            ret = 0;
+    } else {
+        ret = mDevice->set_active_group(mDevice, gid,
+                                                        storePath.c_str());
+    }
+    return ErrorFilter(ret);
 }
 
 Return<RequestStatus> BiometricsFingerprint::authenticate(uint64_t operationId,
@@ -418,15 +462,18 @@ void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
             }
             break;
         case FINGERPRINT_TEMPLATE_ENUMERATING:
-            ALOGD("onEnumerate(fid=%d, gid=%d, rem=%d)",
-                msg->data.enumerated.finger.fid,
-                msg->data.enumerated.finger.gid,
-                msg->data.enumerated.remaining_templates);
-            if (!thisPtr->mClientCallback->onEnumerate(devId,
+            // ignored, won't happen for 2.0 HALs
+            if (fingerprint_type != 2) {
+                ALOGD("onEnumerate(fid=%d, gid=%d, rem=%d)",
                     msg->data.enumerated.finger.fid,
                     msg->data.enumerated.finger.gid,
-                    msg->data.enumerated.remaining_templates).isOk()) {
-                ALOGE("failed to invoke fingerprint onEnumerate callback");
+                    msg->data.enumerated.remaining_templates);
+                if (!thisPtr->mClientCallback->onEnumerate(devId,
+                        msg->data.enumerated.finger.fid,
+                        msg->data.enumerated.finger.gid,
+                        msg->data.enumerated.remaining_templates).isOk()) {
+                    ALOGE("failed to invoke fingerprint onEnumerate callback");
+                }
             }
             break;
     }
