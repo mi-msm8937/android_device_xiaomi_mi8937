@@ -8,3 +8,9 @@ service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
     class main
     user root
     oneshot
+
+service baseband-sh /vendor/bin/init.baseband.sh
+    class late_start
+    user system
+    group system
+    oneshot

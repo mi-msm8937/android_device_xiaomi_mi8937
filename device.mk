@@ -143,6 +143,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.xiaomi.device.sh \
+    init.baseband.sh \
     init.goodix.sh
 
 # Sensors
