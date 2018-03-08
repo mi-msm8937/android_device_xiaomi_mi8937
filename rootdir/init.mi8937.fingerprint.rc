@@ -11,6 +11,11 @@ service vendor.santoni_gx_fpd /vendor/bin/santoni_gx_fpd
     group system
     disabled
 
+service vendor.goodix_script /vendor/bin/init.goodix.sh
+    class late_start
+    user root
+    oneshot
+
 # Unsupported devices
 on property:vendor.fingerprint.class=failed
     stop vendor.fps_hal

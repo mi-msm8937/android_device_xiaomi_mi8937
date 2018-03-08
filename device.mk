@@ -108,7 +108,8 @@ PRODUCT_PACKAGES += \
     init.mi8937.sensors.rc
 
 PRODUCT_PACKAGES += \
-    init.xiaomi.device.sh
+    init.xiaomi.device.sh \
+    init.goodix.sh
 
 # Sensors
 PRODUCT_COPY_FILES += \
