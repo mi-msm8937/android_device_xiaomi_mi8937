@@ -1,6 +1,9 @@
 # Camera
 /(vendor|system/vendor)/bin/[0-9a-z]+_mm-qcamera-daemon	u:object_r:mm-qcamerad_exec:s0
 
+# Camera sockets
+/data/vendor/qcam(/.*)?	u:object_r:vendor_camera_data_file:s0
+
 # Charger - bq2560x
 /sys/devices/platform/soc/[a-f0-9]+.i2c/i2c-[0-9]+/[0-9a-f]+-006b/power_supply/battery(/.*)?	u:object_r:sysfs_battery_supply:s0
 /sys/devices/platform/soc/[a-f0-9]+.i2c/i2c-[0-9]+/[0-9a-f]+-006b/power_supply/usb(/.*)?	u:object_r:sysfs_usb_supply:s0
