@@ -12,6 +12,11 @@ DEVICE_PATH := device/xiaomi/mi8937
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := mi8937,landtoni,land,santoni,prada,ulova,ulysse,ugglite,ugg,rova,rolex,riva
 
+# Camera
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/bin/land_mm-qcamera-daemon=23 \
+    /vendor/bin/prada_mm-qcamera-daemon=23
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
