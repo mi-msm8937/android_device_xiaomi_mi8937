@@ -13,6 +13,10 @@ DEVICE_PATH := device/xiaomi/mi8937
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := landtoni,land,santoni,ulysse,ugglite,ugg,rova,rolex,riva,mi8937
 
+# Camera
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+    /vendor/bin/land_mm-qcamera-daemon=23
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
