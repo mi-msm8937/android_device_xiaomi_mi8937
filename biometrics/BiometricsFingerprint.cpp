@@ -220,19 +220,26 @@ Return<RequestStatus> BiometricsFingerprint::enumerate()  {
         fingerprint_finger_id_t results[MAX_FINGERPRINTS];
         uint32_t n = MAX_FINGERPRINTS;
         enumerate_2_0 enumerate = (enumerate_2_0) mDevice->enumerate;
-        ret = enumerate(mDevice, results, &n);
+        int total_templates = enumerate(mDevice, results, &n);
 
-        if (ret == 0 && mClientCallback != nullptr) {
-            ALOGD("Got %d enumerated templates", n);
-            for (uint32_t i = 0; i < n; i++) {
-                const uint64_t devId = reinterpret_cast<uint64_t>(mDevice);
-                const auto& fp = results[i];
-                ALOGD("onEnumerate(fid=%d, gid=%d)", fp.fid, fp.gid);
-                if (!mClientCallback->onEnumerate(devId, fp.fid, fp.gid, n - i - 1).isOk()) {
-                    ALOGE("failed to invoke fingerprint onEnumerate callback");
-                }
+        ALOGD("Got %d enumerated templates, retval = %d", n, total_templates);
+
+        // Check if the function actually enumerated, or just simply sent a dummy retval.
+        if ((n == MAX_FINGERPRINTS && total_templates < MAX_FINGERPRINTS)
+                || mClientCallback == nullptr) {
+            return RequestStatus::SYS_EINVAL;
+        }
+
+        for (uint32_t i = 0; i < n; i++) {
+            const uint64_t devId = reinterpret_cast<uint64_t>(mDevice);
+            const auto& fp = results[i];
+            ALOGD("onEnumerate(fid=%d, gid=%d)", fp.fid, fp.gid);
+            if (!mClientCallback->onEnumerate(devId, fp.fid, fp.gid, n - i - 1).isOk()) {
+                ALOGE("failed to invoke fingerprint onEnumerate callback");
             }
         }
+
+        return RequestStatus::SYS_OK;
     } else {
         ret = mDevice->enumerate(mDevice);
     }
