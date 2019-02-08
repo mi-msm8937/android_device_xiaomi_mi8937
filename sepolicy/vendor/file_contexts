@@ -4,3 +4,6 @@
 # IR
 /dev/lirc0	u:object_r:ir_device:s0
 /dev/spidev7.1	u:object_r:ir_device:s0
+
+# Shell Script
+/(vendor|system/vendor)/bin/init\.baseband\.sh	u:object_r:init_baseband_exec:s0
