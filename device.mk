@@ -99,6 +99,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/rova_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/rova_sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/ulysse_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/ulysse_sensor_def_qcomdev.conf
 
+# VNDK
+PRODUCT_PACKAGES += vndk-ext
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
