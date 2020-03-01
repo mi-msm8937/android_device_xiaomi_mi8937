@@ -21,6 +21,9 @@ PRODUCT_PACKAGES += \
     mi8937_ugg_overlay \
     mi8937_ugglite_overlay
 
+PRODUCT_PACKAGES += \
+    VibePattern_overlay
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
