@@ -13,7 +13,7 @@ service vendor.santoni_gx_fpd /vendor/bin/santoni_gx_fpd
 
 service vendor.goodix_script /vendor/bin/init.goodix.sh
     class late_start
-    user root
+    user system
     oneshot
 
 # Unsupported devices
