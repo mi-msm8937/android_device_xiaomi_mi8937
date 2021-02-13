@@ -83,6 +83,7 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    fakelogprint \
     libshims_android \
     libshims_binder \
     libshims_ui \
