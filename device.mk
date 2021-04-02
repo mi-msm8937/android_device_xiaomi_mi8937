@@ -66,10 +66,20 @@ include $(LOCAL_PATH)/properties.mk
 PRODUCT_PACKAGES += \
     fstab.qcom \
     init.mi8937.rc \
-    init.mi8937.audio.rc
+    init.mi8937.audio.rc \
+    init.mi8937.sensors.rc
 
 PRODUCT_PACKAGES += \
     init.xiaomi.device.sh
+
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/land_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/land_sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/santoni_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/santoni_sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/rolex_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/rolex_sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/riva_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/riva_sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/ulysse_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/ulysse_sensor_def_qcomdev.conf
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
