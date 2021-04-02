@@ -1,0 +1,21 @@
+# Audio
+on property:ro.xiaomi.device=land
+    mount none /vendor/etc/land_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
+    restart vendor.audio-hal
+
+on property:ro.xiaomi.device=riva
+    mount none /vendor/etc/riva_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
+    restart vendor.audio-hal
+
+on property:ro.xiaomi.device=rolex
+    mount none /vendor/etc/rolex_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
+    mount none /vendor/etc/rolex_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
+    restart vendor.audio-hal
+
+on property:ro.xiaomi.device=santoni
+    mount none /vendor/etc/santoni_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
+    restart vendor.audio-hal
+
+on property:ro.xiaomi.series=ulysse
+    mount none /vendor/etc/ulysse_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
+    restart vendor.audio-hal
