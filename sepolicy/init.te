@@ -1,0 +1,4 @@
+get_prop(init, fingerprint_prop)
+set_prop(init, fingerprint_prop)
+
+allow init fpc_data_file:dir create_dir_perms;

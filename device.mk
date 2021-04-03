@@ -6,6 +6,7 @@
 
 # Inherit from msm8937-common
 $(call inherit-product, device/xiaomi/msm8937-common/msm8937.mk)
+$(call inherit-product, device/xiaomi/mi8937/biometrics/product.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -52,6 +53,22 @@ PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
 
+# Fingerprint
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/blank.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/blank.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/fingerprint.goodix.so \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/gxfingerprint.default.so
+
+PRODUCT_PACKAGES += \
+    libbacktrace-vendor \
+    libunwind
+
+PRODUCT_PACKAGES += \
+    libshims_android \
+    libshims_binder
+
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
@@ -86,6 +103,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.mi8937.rc \
     init.mi8937.audio.rc \
+    init.mi8937.fingerprint.rc \
     init.mi8937.ir.rc \
     init.mi8937.sensors.rc
 

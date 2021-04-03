@@ -12,6 +12,9 @@
 # Fuelgauge - cw2015
 /sys/devices/platform/soc/[a-f0-9]+.i2c/i2c-[0-9]+/[0-9a-f]+-0062/power_supply/rk-bat(/.*)?	u:object_r:sysfs_battery_supply:s0
 
+# Goodix Fingerprint
+/(vendor|system/vendor)/bin/[0-9a-z]+_gx_fpd	u:object_r:gx_fpd_exec:s0
+
 # Ir
 /dev/lirc0	u:object_r:ir_device:s0
 /dev/spidev7.1	u:object_r:ir_device:s0

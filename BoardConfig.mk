@@ -6,6 +6,7 @@
 
 # Inherit from common msm8937-common
 include device/xiaomi/msm8937-common/BoardConfigCommon.mk
+include device/xiaomi/mi8937/biometrics/board.mk
 
 DEVICE_PATH := device/xiaomi/mi8937
 
