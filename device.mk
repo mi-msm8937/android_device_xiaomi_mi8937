@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.mi8937.rc \
     init.mi8937.audio.rc \
+    init.mi8937.ir.rc \
     init.mi8937.sensors.rc
 
 PRODUCT_PACKAGES += \

@@ -187,3 +187,14 @@ vendor/etc/ulysse_acdbdata/QRD/QRD_Handset_cal.acdb|7b2a9898aab0468cad9c2fc67415
 vendor/etc/ulysse_acdbdata/QRD/QRD_Hdmi_cal.acdb|39f1d884c5cd40691bc9349bf57372c68269efa2
 vendor/etc/ulysse_acdbdata/QRD/QRD_Headset_cal.acdb|bf2bec4b1934f7f006ee40359b6186855b400e04
 vendor/etc/ulysse_acdbdata/QRD/QRD_Speaker_cal.acdb|49d26f0e6530f3f60dbaaa800378c1e57863965c
+
+# Consumer IR - LED - from rolex 7.1.2 N2G47H V10.2.3.0.NCCMIXM
+vendor/lib/hw/consumerir.led.so|53830d64d63d6cc405209d8d4cafea102dcd7b54
+vendor/lib64/hw/consumerir.led.so|d5145eb1712c8e0895016282f3e348c98ad17f7b
+
+# Consumer IR - spidev - from riva (oreo)
+vendor/lib/hw/consumerir.spidev.so|b2e014de968f65e013b4dae3fad67f16aa3b0a09
+vendor/lib64/hw/consumerir.spidev.so|bed46204c8200d5f0ec1b37c14ecbc06f424db93
+
+# Consumer IR - pwm - from ugg 7.1.2 N2G47H V11.0.2.0.NDKMIXM
+vendor/lib64/hw/consumerir.pwm.so|0c7026fe6b1f3bbb4a41389cf8f9849c6a3202c6

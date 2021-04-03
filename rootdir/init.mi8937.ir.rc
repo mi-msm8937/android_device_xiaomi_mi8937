@@ -1,0 +1,22 @@
+# Consumer IR
+on property:ro.xiaomi.device=riva
+    chown system system /dev/spidev7.1
+    setprop ro.hardware.consumerir spidev
+    restart vendor.ir-hal-1-0
+
+on property:ro.xiaomi.device=rolex
+    chown system system /sys/class/leds/infrared/transmit
+    chown system system /sys/class/leds/infrared/brightness
+    setprop ro.hardware.consumerir led
+    restart vendor.ir-hal-1-0
+
+on property:ro.xiaomi.series=landtoni
+    chown system system /sys/class/leds/infrared/transmit
+    chown system system /sys/class/leds/infrared/brightness
+    setprop ro.hardware.consumerir led
+    restart vendor.ir-hal-1-0
+
+on property:ro.xiaomi.series=ulysse
+    chown system system /dev/lirc0
+    setprop ro.hardware.consumerir pwm
+    restart vendor.ir-hal-1-0
