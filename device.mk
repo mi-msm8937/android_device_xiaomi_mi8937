@@ -54,6 +54,16 @@ PRODUCT_PACKAGES += \
     libshims_ui \
     libwui
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/lib/hw/camera.msm8937.so
+
+PRODUCT_PACKAGES += \
+    camera.ulysse \
+    libUCcamera_interface \
+    libUCjpeg_interface \
+    libUClib2d_interface \
+    libUCmx_core
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \

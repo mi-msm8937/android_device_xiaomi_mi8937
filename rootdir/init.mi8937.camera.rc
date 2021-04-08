@@ -1,3 +1,8 @@
 # Camera
 on post-fs-data
     mkdir /data/vendor/qcam 0770 camera camera
+
+on property:ro.xiaomi.series=ulysse
+    stop vendor.camera-provider-2-4
+    mount none /vendor/lib/hw/camera.ulysse.so /vendor/lib/hw/camera.msm8937.so bind
+    restart vendor.camera-provider-2-4
