@@ -16,3 +16,8 @@ on property:ro.xiaomi.series=ulysse
     mount none /vendor/etc/ulysse_camera /vendor/etc/camera bind
     enable ulysse_qcamerasvr
     restart vendor.camera-provider-2-4
+
+on property:ro.xiaomi.device=land
+    stop vendor.camera-provider-2-4
+    mount none /vendor/lib/hw/camera.land.so /vendor/lib/hw/camera.msm8937.so bind
+    restart vendor.camera-provider-2-4

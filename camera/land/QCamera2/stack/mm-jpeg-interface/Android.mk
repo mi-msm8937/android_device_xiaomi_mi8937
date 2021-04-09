@@ -60,8 +60,8 @@ LOCAL_SRC_FILES := \
     src/mm_jpegdec.c \
     src/mm_jpeg_mpo_composer.c
 
-LOCAL_MODULE           := libmmjpeg_interface
-LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libqomx_core libmmcamera_interface libutils
+LOCAL_MODULE           := libLCjpeg_interface
+LOCAL_SHARED_LIBRARIES := libdl libcutils liblog libLCmx_core libLCcamera_interface libutils
 LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
 

@@ -66,6 +66,13 @@ PRODUCT_PACKAGES += \
     libUClib2d_interface \
     libUCmx_core
 
+PRODUCT_PACKAGES += \
+    camera.land \
+    libLCcamera_interface \
+    libLCjpeg_interface \
+    libLClib2d_interface \
+    libLCmx_core
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \

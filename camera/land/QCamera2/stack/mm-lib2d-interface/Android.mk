@@ -26,7 +26,7 @@ endif
 LOCAL_SRC_FILES := \
     src/mm_lib2d.c
 
-LOCAL_MODULE           := libmmlib2d_interface
+LOCAL_MODULE           := libLClib2d_interface
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
 LOCAL_MODULE_TAGS := optional
 LOCAL_VENDOR_MODULE := true
