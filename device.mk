@@ -55,7 +55,9 @@ PRODUCT_PACKAGES += \
     libwui
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/lib/hw/camera.msm8937.so
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/lib/hw/camera.msm8937.so \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/camera/.placeholder \
+    $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/bin/mm-qcamera-daemon
 
 PRODUCT_PACKAGES += \
     camera.ulysse \

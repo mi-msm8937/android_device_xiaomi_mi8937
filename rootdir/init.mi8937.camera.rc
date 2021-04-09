@@ -2,7 +2,17 @@
 on post-fs-data
     mkdir /data/vendor/qcam 0770 camera camera
 
+service ulysse_qcamerasvr /system/vendor/bin/ulysse_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
 on property:ro.xiaomi.series=ulysse
+    stop qcamerasvr
     stop vendor.camera-provider-2-4
     mount none /vendor/lib/hw/camera.ulysse.so /vendor/lib/hw/camera.msm8937.so bind
+    mount none /vendor/etc/ulysse_camera /vendor/etc/camera bind
+    enable ulysse_qcamerasvr
     restart vendor.camera-provider-2-4
