@@ -50,6 +50,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    libshims_c_camera \
     libshims_ui \
     libwui
 
