@@ -17,7 +17,16 @@ on property:ro.xiaomi.series=ulysse
     enable ulysse_qcamerasvr
     restart vendor.camera-provider-2-4
 
+service land_qcamerasvr /system/vendor/bin/land_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
 on property:ro.xiaomi.device=land
+    stop qcamerasvr
     stop vendor.camera-provider-2-4
     mount none /vendor/lib/hw/camera.land.so /vendor/lib/hw/camera.msm8937.so bind
+    enable land_qcamerasvr
     restart vendor.camera-provider-2-4
