@@ -28,6 +28,7 @@ on property:ro.xiaomi.device=land
     stop qcamerasvr
     stop vendor.camera-provider-2-4
     mount none /vendor/lib/hw/camera.land.so /vendor/lib/hw/camera.msm8937.so bind
+    mount none /vendor/etc/land_camera /vendor/etc/camera bind
     setprop persist.camera.gyro.android 0
     setprop persist.camera.imglib.cac3 2
     setprop persist.camera.is_type 1
