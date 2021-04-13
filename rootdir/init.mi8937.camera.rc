@@ -36,3 +36,9 @@ on property:ro.xiaomi.device=land
     setprop camera.lowpower.record.enable 0
     enable land_qcamerasvr
     restart vendor.camera-provider-2-4
+
+on property:ro.xiaomi.device=santoni
+    stop vendor.camera-provider-2-4
+    mount none /vendor/lib/hw/camera.santoni.so /vendor/lib/hw/camera.msm8937.so bind
+    restart qcamerasvr
+    restart vendor.camera-provider-2-4

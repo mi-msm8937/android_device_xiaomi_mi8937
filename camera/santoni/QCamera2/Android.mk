@@ -94,7 +94,7 @@ LOCAL_HEADER_LIBRARIES += libandroid_sensor_headers
 LOCAL_HEADER_LIBRARIES += libcutils_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
 LOCAL_HEADER_LIBRARIES += libhardware_headers
-LOCAL_HEADER_LIBRARIES += camera_common_headers
+LOCAL_HEADER_LIBRARIES += santoni_camera_common_headers
 LOCAL_HEADER_LIBRARIES += display_headers
 
 #HAL 1.0 Include paths
@@ -122,7 +122,7 @@ LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 LOCAL_C_INCLUDES += \
         hardware/qcom-caf/msm8996/display/libqservice
 LOCAL_SHARED_LIBRARIES := liblog libhardware libutils libcutils libdl libsync
-LOCAL_SHARED_LIBRARIES += libmmcamera_interface libmmjpeg_interface libui libcamera_metadata
+LOCAL_SHARED_LIBRARIES += libSCcamera_interface libSCjpeg_interface libui libcamera_metadata
 LOCAL_SHARED_LIBRARIES += libqdMetaData libqservice libbinder
 LOCAL_SHARED_LIBRARIES += libcutils libdl
 LOCAL_SHARED_LIBRARIES += libhidlbase
@@ -136,7 +136,7 @@ LOCAL_SHARED_LIBRARIES += libts_face_beautify_hal libts_detected_face_hal
 endif
 
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE := camera.santoni
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 
@@ -144,7 +144,7 @@ LOCAL_32_BIT_ONLY := $(BOARD_QTI_CAMERA_32BIT_ONLY)
 include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := camera_common_headers
+LOCAL_MODULE := santoni_camera_common_headers
 LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)/stack/common
 include $(BUILD_HEADER_LIBRARY)
 

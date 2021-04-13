@@ -73,6 +73,13 @@ PRODUCT_PACKAGES += \
     libLClib2d_interface \
     libLCmx_core
 
+PRODUCT_PACKAGES += \
+    camera.santoni \
+    libSCcamera_interface \
+    libSCjpeg_interface \
+    libSClib2d_interface \
+    libSCmx_core
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
