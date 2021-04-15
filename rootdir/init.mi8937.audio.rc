@@ -20,6 +20,10 @@ on property:ro.xiaomi.series=ulysse
     mount none /vendor/etc/ulysse_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
     restart vendor.audio-hal
 
+on property:ro.xiaomi.device=prada
+    mount none /vendor/etc/prada_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
+    restart vendor.audio-hal
+
 # Audio ACDB
 on property:ro.xiaomi.device=land
     mount none /vendor/etc/land_acdbdata /vendor/etc/acdbdata bind
@@ -35,4 +39,8 @@ on property:ro.xiaomi.series=rova
 
 on property:ro.xiaomi.series=ulysse
     mount none /vendor/etc/ulysse_acdbdata /vendor/etc/acdbdata bind
+    restart vendor.audio-hal
+
+on property:ro.xiaomi.device=prada
+    mount none /vendor/etc/prada_acdbdata /vendor/etc/acdbdata bind
     restart vendor.audio-hal

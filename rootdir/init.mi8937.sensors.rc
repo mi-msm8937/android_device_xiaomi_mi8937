@@ -14,3 +14,7 @@ on property:ro.xiaomi.series=rova
 on property:ro.xiaomi.series=ulysse
     mount none /vendor/etc/sensors/${ro.xiaomi.series}_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
     restart vendor.sensors.qti
+
+on property:ro.xiaomi.device=prada
+    mount none /vendor/etc/sensors/${ro.xiaomi.device}_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    restart vendor.sensors.qti

@@ -20,3 +20,8 @@ on property:ro.xiaomi.series=ulysse
     chown system system /dev/lirc0
     setprop ro.hardware.consumerir pwm
     restart vendor.ir-hal-1-0
+
+# FIXME: Switch to ir-pwm whenever prada bringup gets done!
+on property:ro.xiaomi.device=prada
+    setprop ro.hardware.consumerir led
+    restart vendor.ir-hal-1-0

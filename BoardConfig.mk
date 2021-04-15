@@ -11,7 +11,7 @@ include device/xiaomi/mi8937/biometrics/board.mk
 DEVICE_PATH := device/xiaomi/mi8937
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := landtoni,land,santoni,ulysse,ugglite,ugg,rova,rolex,riva,mi8937
+TARGET_OTA_ASSERT_DEVICE := landtoni,land,santoni,ulysse,ugglite,ugg,rova,rolex,riva,prada,mi8937
 
 # Camera
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \

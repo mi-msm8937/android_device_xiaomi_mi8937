@@ -15,3 +15,6 @@ service baseband-sh /vendor/bin/init.baseband.sh
     user system
     group system
     oneshot
+
+on property:ro.xiaomi.device=prada
+    setprop qemu.hw.mainkeys 0

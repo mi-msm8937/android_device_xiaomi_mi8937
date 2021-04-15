@@ -59,3 +59,8 @@ on property:ro.xiaomi.series=rova
     mount none /vendor/etc/santoni_camera /vendor/etc/camera bind
     enable santoni_qcamerasvr
     restart vendor.camera-provider-2-4
+
+# FIXME: Bringup prada camera!
+on property:ro.xiaomi.device=prada
+    stop qcamerasvr
+    stop vendor.camera-provider-2-4

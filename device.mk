@@ -19,7 +19,8 @@ PRODUCT_PACKAGES += \
     mi8937_rolex_overlay \
     mi8937_santoni_overlay \
     mi8937_ugg_overlay \
-    mi8937_ugglite_overlay
+    mi8937_ugglite_overlay \
+    mi8937_prada_overlay
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
@@ -36,7 +37,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/rolex_mixer_paths_qrd_sku1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/rolex_mixer_paths_qrd_sku1.xml \
     $(LOCAL_PATH)/audio/rolex_mixer_paths_qrd_sku2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/rolex_mixer_paths_qrd_sku2.xml \
     $(LOCAL_PATH)/audio/santoni_mixer_paths_qrd_sku1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/santoni_mixer_paths_qrd_sku1.xml \
-    $(LOCAL_PATH)/audio/ulysse_mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ulysse_mixer_paths_mtp.xml
+    $(LOCAL_PATH)/audio/ulysse_mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ulysse_mixer_paths_mtp.xml \
+    $(LOCAL_PATH)/audio/prada_mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/prada_mixer_paths_mtp.xml
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml
@@ -153,7 +155,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/land_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/land_sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/santoni_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/santoni_sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/rova_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/rova_sensor_def_qcomdev.conf \
-    $(LOCAL_PATH)/configs/sensors/ulysse_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/ulysse_sensor_def_qcomdev.conf
+    $(LOCAL_PATH)/configs/sensors/ulysse_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/ulysse_sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/prada_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/prada_sensor_def_qcomdev.conf
 
 # VNDK
 PRODUCT_PACKAGES += vndk-ext
