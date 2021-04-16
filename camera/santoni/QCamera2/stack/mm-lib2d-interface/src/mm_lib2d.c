@@ -307,9 +307,9 @@ lib2d_error mm_lib2d_init(lib2d_mode mode, cam_format_t src_format,
   }
 
   // Open libmmcamera_imglib
-  lib2d_obj->img_lib.ptr = dlopen("libmmcamera_imglib.so", RTLD_NOW);
+  lib2d_obj->img_lib.ptr = dlopen("libSCcamera_imglib.so", RTLD_NOW);
   if (!lib2d_obj->img_lib.ptr) {
-    LOGE("ERROR: couldn't dlopen libmmcamera_imglib.so: %s",
+    LOGE("ERROR: couldn't dlopen libSCcamera_imglib.so: %s",
        dlerror());
     goto FREE_LIB2D_OBJ;
   }

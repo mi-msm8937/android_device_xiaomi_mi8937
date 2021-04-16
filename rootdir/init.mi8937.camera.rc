@@ -37,8 +37,17 @@ on property:ro.xiaomi.device=land
     enable land_qcamerasvr
     restart vendor.camera-provider-2-4
 
+service santoni_qcamerasvr /system/vendor/bin/santoni_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
 on property:ro.xiaomi.device=santoni
+    stop qcamerasvr
     stop vendor.camera-provider-2-4
     mount none /vendor/lib/hw/camera.santoni.so /vendor/lib/hw/camera.msm8937.so bind
-    restart qcamerasvr
+    mount none /vendor/etc/santoni_camera /vendor/etc/camera bind
+    enable santoni_qcamerasvr
     restart vendor.camera-provider-2-4
