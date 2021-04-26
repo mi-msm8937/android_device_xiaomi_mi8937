@@ -51,3 +51,11 @@ on property:ro.xiaomi.device=santoni
     mount none /vendor/etc/santoni_camera /vendor/etc/camera bind
     enable santoni_qcamerasvr
     restart vendor.camera-provider-2-4
+
+on property:ro.xiaomi.series=rova
+    stop qcamerasvr
+    stop vendor.camera-provider-2-4
+    mount none /vendor/lib/hw/camera.santoni.so /vendor/lib/hw/camera.msm8937.so bind
+    mount none /vendor/etc/santoni_camera /vendor/etc/camera bind
+    enable santoni_qcamerasvr
+    restart vendor.camera-provider-2-4
