@@ -39,5 +39,8 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.recovery.qcom
 # Security patch level
 VENDOR_SECURITY_PATCH := 2018-04-01
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+
 # Inherit from the proprietary version
 include vendor/xiaomi/mi8937/BoardConfigVendor.mk
