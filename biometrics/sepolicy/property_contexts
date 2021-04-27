@@ -1,2 +1,7 @@
 sys.fp.goodix					u:object_r:fingerprint_prop:s0
 sys.fp.vendor					u:object_r:fingerprint_prop:s0
+ro.boot.fpsensor				u:object_r:fingerprint_prop:s0
+ro.hardware.fingerprint				u:object_r:fingerprint_prop:s0
+persist.sys.fp.onstart				u:object_r:fingerprint_prop:s0
+persist.sys.fp.vendor				u:object_r:fingerprint_prop:s0
+vendor.fingerprint.				u:object_r:fingerprint_prop:s0
