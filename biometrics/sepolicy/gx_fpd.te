@@ -35,6 +35,7 @@ r_dir_file(gx_fpd, firmware_file)
 
 # Allow read/write property
 set_prop(gx_fpd, system_prop)
+set_prop(gx_fpd, fingerprint_prop)
 
 # Ignore all logging requests
 dontaudit gx_fpd storage_file:dir search;
