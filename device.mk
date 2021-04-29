@@ -11,6 +11,14 @@ $(call inherit-product, device/xiaomi/msm8937-common/msm8937.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
+PRODUCT_PACKAGES += \
+    mi8937_land_overlay \
+    mi8937_riva_overlay \
+    mi8937_rolex_overlay \
+    mi8937_santoni_overlay \
+    mi8937_ugg_overlay \
+    mi8937_ugglite_overlay
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
