@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-function blob_fixup() {
+function no_blob_fixup() {
     case "${1}" in
         vendor/lib/lib_fpc_tac_shared.so|vendor/lib64/lib_fpc_tac_shared.so)
             "${PATCHELF}" --add-needed "libshims_binder.so" "${2}"
