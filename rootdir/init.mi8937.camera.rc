@@ -1,0 +1,3 @@
+# Camera
+on post-fs-data
+    mkdir /data/vendor/qcam 0770 camera camera

@@ -1,4 +1,5 @@
 import /vendor/etc/init/hw/init.mi8937.audio.rc
+import /vendor/etc/init/hw/init.mi8937.camera.rc
 import /vendor/etc/init/hw/init.mi8937.ir.rc
 import /vendor/etc/init/hw/init.mi8937.fingerprint.rc
 import /vendor/etc/init/hw/init.mi8937.sensors.rc
