@@ -39,7 +39,11 @@ include $(LOCAL_PATH)/properties.mk
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    fstab.qcom \
+    init.mi8937.rc
+
+PRODUCT_PACKAGES += \
+    init.xiaomi.device.sh
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

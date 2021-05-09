@@ -11,3 +11,6 @@
 
 # Fuelgauge - cw2015
 /sys/devices/platform/soc/[a-f0-9]+.i2c/i2c-[0-9]+/[0-9a-f]+-0062/power_supply/rk-bat(/.*)?	u:object_r:sysfs_battery_supply:s0
+
+# Shell Script
+/(vendor|system/vendor)/bin/init\.xiaomi\.device\.sh	u:object_r:init_xiaomi_exec:s0
