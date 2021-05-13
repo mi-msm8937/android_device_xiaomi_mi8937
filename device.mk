@@ -11,6 +11,10 @@ $(call inherit-product, device/xiaomi/msm8937-common/msm8937.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
+# Rootdir
+PRODUCT_PACKAGES += \
+    fstab.qcom
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
