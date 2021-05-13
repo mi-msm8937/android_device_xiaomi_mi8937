@@ -12,6 +12,9 @@ DEVICE_PATH := device/xiaomi/mi8937
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := landtoni,land,santoni,ulysse,ugglite,ugg,rova,rolex,riva,mi8937
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
 # Kernel
 BOARD_KERNEL_CMDLINE += earlycon=msm_hsl_uart,0x78b000
 TARGET_KERNEL_CONFIG := mi8937_defconfig

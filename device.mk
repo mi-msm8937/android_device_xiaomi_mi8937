@@ -11,6 +11,11 @@ $(call inherit-product, device/xiaomi/msm8937-common/msm8937.mk)
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom
