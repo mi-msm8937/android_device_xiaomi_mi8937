@@ -22,6 +22,8 @@
 #include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
 
+#include <android-base/properties.h>
+
 #include <inttypes.h>
 #include <unistd.h>
 
@@ -211,13 +213,25 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
     return sInstance;
 }
 
-fingerprint_device_t* BiometricsFingerprint::openHal() {
+fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name, const char *class_name) {
     int err;
     const hw_module_t *hw_mdl = nullptr;
-    ALOGD("Opening fingerprint hal library...");
-    if (0 != (err = hw_get_module(FINGERPRINT_HARDWARE_MODULE_ID, &hw_mdl))) {
-        ALOGE("Can't open fingerprint HW Module, error: %d", err);
+
+    if (std::string(hwmdl_name).empty())
         return nullptr;
+
+    if (std::string(class_name).empty() || std::string(class_name) == "none") {
+        ALOGD("Opening fingerprint hal library %s...", hwmdl_name);
+        if (0 != (err = hw_get_module(hwmdl_name, &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module %s, error: %d", hwmdl_name, err);
+            return nullptr;
+        }
+    } else {
+        ALOGD("Opening fingerprint hal library %s %s...", hwmdl_name, class_name);
+        if (0 != (err = hw_get_module_by_class(hwmdl_name, class_name, &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module %s %s, error: %d", hwmdl_name, class_name, err);
+            return nullptr;
+        }
     }
 
     if (hw_mdl == nullptr) {
@@ -257,6 +271,63 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
     }
 
     return fp_device;
+}
+
+void BiometricsFingerprint::resetHW(std::string class_name) {
+    ALOGD("Enter reset hardware %s.", class_name.c_str());
+    ALOGD("Exit reset hardware %s.", class_name.c_str());
+    return;
+}
+
+void BiometricsFingerprint::setFpSensorProp(std::string hwmdl_name, std::string class_name) {
+    android::base::SetProperty("vendor.fingerprint.hwmdl", hwmdl_name);
+    android::base::SetProperty("vendor.fingerprint.class", class_name);
+}
+
+fingerprint_device_t* BiometricsFingerprint::openHal() {
+    fingerprint_device_t *fp_device;
+    std::string sensor_hwmdl_name = android::base::GetProperty("vendor.fingerprint.hwmdl", "");
+    std::string sensor_class_name = android::base::GetProperty("vendor.fingerprint.class", "");
+
+    if (!sensor_class_name.empty() && sensor_class_name != "failed") {
+        if (sensor_hwmdl_name.empty() || sensor_hwmdl_name == "failed")
+            sensor_hwmdl_name = FINGERPRINT_HARDWARE_MODULE_ID;
+        ALOGD("Enter direct loading. hwmdl is %s, class is %s.", sensor_hwmdl_name.c_str(), sensor_class_name.c_str());
+        BiometricsFingerprint::resetHW(sensor_class_name);
+        fp_device = BiometricsFingerprint::openTheHal(sensor_hwmdl_name.c_str(), sensor_class_name.c_str());
+        if (fp_device == nullptr) {
+            ALOGE("Failed to load %s %s fingerprint module", sensor_hwmdl_name.c_str(), sensor_class_name.c_str());
+        } else {
+            BiometricsFingerprint::setFpSensorProp(sensor_hwmdl_name, sensor_class_name);
+            return fp_device;
+        }
+    } else {
+        for (int i = 0; i <= 10; i++) {
+            std::string cur_sensor_hwmdl_prop_name = "vendor.fingerprint.hwmdl_" + std::to_string(i);
+            std::string cur_sensor_hwmdl_name = android::base::GetProperty(cur_sensor_hwmdl_prop_name, "");
+            std::string cur_sensor_class_prop_name = "vendor.fingerprint.class_" + std::to_string(i);
+            std::string cur_sensor_class_name = android::base::GetProperty(cur_sensor_class_prop_name, "");
+
+            if (cur_sensor_hwmdl_name.empty() && cur_sensor_class_name.empty())
+                break;
+
+            if (cur_sensor_hwmdl_name.empty())
+                cur_sensor_hwmdl_name = FINGERPRINT_HARDWARE_MODULE_ID;
+
+            BiometricsFingerprint::resetHW(cur_sensor_class_name);
+
+            fp_device = BiometricsFingerprint::openTheHal(cur_sensor_hwmdl_name.c_str(), cur_sensor_class_name.c_str());
+            if (fp_device == nullptr) {
+                ALOGE("Failed to load %s %s fingerprint module", cur_sensor_hwmdl_name.c_str(), cur_sensor_class_name.c_str());
+            } else {
+                BiometricsFingerprint::setFpSensorProp(cur_sensor_hwmdl_name, cur_sensor_class_name);
+                return fp_device;
+            }
+        }
+    }
+
+    BiometricsFingerprint::setFpSensorProp("failed", "failed");
+    return nullptr;
 }
 
 void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
