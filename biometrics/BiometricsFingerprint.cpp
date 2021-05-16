@@ -22,6 +22,7 @@
 #include <hardware/fingerprint.h>
 #include "BiometricsFingerprint.h"
 
+#include <android-base/file.h>
 #include <android-base/properties.h>
 
 #include <inttypes.h>
@@ -274,7 +275,21 @@ fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name, 
 }
 
 void BiometricsFingerprint::resetHW(std::string class_name) {
+    std::string xiaomi_device = android::base::GetProperty("ro.xiaomi.device","");
+    std::string xiaomi_series = android::base::GetProperty("ro.xiaomi.series","");
     ALOGD("Enter reset hardware %s.", class_name.c_str());
+    if (class_name.find("fpc") != class_name.npos) {
+        if (xiaomi_series == "landtoni") {
+            if (!android::base::WriteStringToFile("disable", "/sys/devices/soc/soc:fpc1020/compatible_all", true)) {
+                ALOGE("Failed to reset hardware for %s", class_name.c_str());
+            }
+        }
+        if (xiaomi_device == "ugg") {
+            if (!android::base::WriteStringToFile("reset", "/sys/devices/soc/soc:fpc1020/hw_reset", true)) {
+                ALOGE("Failed to reset hardware for %s", class_name.c_str());
+            }
+        }
+    }
     ALOGD("Exit reset hardware %s.", class_name.c_str());
     return;
 }
