@@ -1,0 +1,17 @@
+# Vibrator
+
+service vendor.mi8937_vibrator_script /vendor/bin/init.mi8937.vibrator.sh
+    user root
+    oneshot
+    disabled
+
+on boot
+    stop vendor.vibrator-1-0
+    stop vendor.qti.vibrator
+    start vendor.mi8937_vibrator_script
+
+on property:ro.vendor.mi8937.use_qti_haptics=0
+    start vendor.vibrator-1-0
+
+on property:ro.vendor.mi8937.use_qti_haptics=1
+    start vendor.qti.vibrator

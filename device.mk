@@ -143,10 +143,12 @@ PRODUCT_PACKAGES += \
     init.mi8937.fingerprint.rc \
     init.mi8937.ir.rc \
     init.mi8937.misc.rc \
-    init.mi8937.sensors.rc
+    init.mi8937.sensors.rc \
+    init.mi8937.vibrator.rc
 
 PRODUCT_PACKAGES += \
     init.xiaomi.device.sh \
+    init.mi8937.vibrator.sh \
     init.baseband.sh \
     init.goodix.sh
 
@@ -157,6 +159,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/santoni_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/santoni_sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/rova_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/rova_sensor_def_qcomdev.conf \
     $(LOCAL_PATH)/configs/sensors/ulysse_sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/ulysse_sensor_def_qcomdev.conf
+
+# Vibrator
+PRODUCT_PACKAGES += vendor.qti.hardware.vibrator.service
 
 # VNDK
 PRODUCT_PACKAGES += vndk-ext
