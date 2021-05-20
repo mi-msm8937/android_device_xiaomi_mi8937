@@ -48,6 +48,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/.placeholder
 
+# Camera
+PRODUCT_PACKAGES += \
+    libshims_ui \
+    libwui
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
