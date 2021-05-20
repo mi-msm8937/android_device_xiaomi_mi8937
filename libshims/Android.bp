@@ -1,0 +1,6 @@
+cc_library {
+    name: "libgxbinder",
+    header_libs: ["libbinder_headers"],
+    srcs: ["libgxbinder.cpp"],
+    vendor: true,
+}
