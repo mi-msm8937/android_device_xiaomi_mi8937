@@ -42,8 +42,8 @@ int main() {
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
     if (is_old_goodix) {
-        // the conventional HAL might start vndbinder services
-        android::ProcessState::initWithDriver("/dev/vndbinder");
+        // the conventional HAL might start binder services
+        android::ProcessState::initWithDriver("/dev/binder");
         android::ProcessState::self()->startThreadPool();
     }
 
