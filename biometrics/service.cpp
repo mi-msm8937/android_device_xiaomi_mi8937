@@ -38,9 +38,14 @@ using android::hardware::joinRpcThreadpool;
 using android::sp;
 
 int main() {
+    std::string hw_fp_prop = android::base::GetProperty("ro.hardware.fingerprint", "none");
     if (android::base::GetProperty("vendor.fingerprint.is_old_goodix","") == "1") {
         is_old_goodix = true;
         ALOGD("is_old_goodix has set to true, Will enable some hacks for old goodix HAL.");
+        if (hw_fp_prop == "none") {
+            ALOGE("ro.hardware.fingerprint not set! Killing binder service!");
+            return 1;
+        }
     }
 
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
