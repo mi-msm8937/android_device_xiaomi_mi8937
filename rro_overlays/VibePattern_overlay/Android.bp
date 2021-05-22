@@ -1,5 +1,0 @@
-runtime_resource_overlay {
-    name: "VibePattern_overlay",
-    sdk_version: "current",
-    vendor: true,
-}

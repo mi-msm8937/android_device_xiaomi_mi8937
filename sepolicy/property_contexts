@@ -2,4 +2,3 @@ persist.s5k3p8sp.	u:object_r:camera_prop:s0
 persist.ov16885.	u:object_r:camera_prop:s0
 persist.ts.rtmakeup	u:object_r:camera_prop:s0
 persist.vendor.camera.dbglog	u:object_r:camera_prop:s0
-ro.vendor.mi8937.	u:object_r:xiaomi_prop:s0

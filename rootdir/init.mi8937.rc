@@ -4,7 +4,6 @@ import /vendor/etc/init/hw/init.mi8937.ir.rc
 import /vendor/etc/init/hw/init.mi8937.fingerprint.rc
 import /vendor/etc/init/hw/init.mi8937.misc.rc
 import /vendor/etc/init/hw/init.mi8937.sensors.rc
-import /vendor/etc/init/hw/init.mi8937.vibrator.rc
 
 service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
     class main
