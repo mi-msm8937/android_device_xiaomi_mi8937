@@ -1,3 +1,18 @@
+# ADSP modules - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
+vendor/lib/rfsa/adsp/dirac_resource.dar|d9b3693eab8c520ef859236b8235752188b7cba0
+vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so|035272c1d77bcd04e3a838056d512964744c9322
+vendor/lib/rfsa/adsp/libadsp_hvx_skel.so|6a1d6ee55cc65d0f12f6a9bfd04823b46d2d6a24
+vendor/lib/rfsa/adsp/libadsp_hvx_stats.so|2f6abffe644ed918ff1a7e0e330f8e9c32add72c
+vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_BGGR.so|3f82d78a7c9e88c5fdc02dc0761349e4ab95abf8
+vendor/lib/rfsa/adsp/libadsp_hvx_zzhdr_RGGB.so|b21151ad414cd7310117fceb924a72fd20e97257
+vendor/lib/rfsa/adsp/libapps_mem_heap.so|5c82ad9cfe3f30105d899e2a4e90cc7566f81252
+vendor/lib/rfsa/adsp/libdirac-capiv2.so|e56031dfaee094d5267e3cc16625cfceaa07cc27
+vendor/lib/rfsa/adsp/libdspCV_skel.so|628985174b0088bed21c866d7984d23855e5e150
+vendor/lib/rfsa/adsp/libfastcvadsp.so|9818625bfa018f517e32a8f4a1e7fb4b255e5049
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so|1ff4a48009e88435d93fd2b9b0c5ea59cedbb4f7
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so|f4d8675a46c5e52add8f8e90e35b29cd33ac582b
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so|b9f68e320d24e9c51871a2056e1f47239bd1cb40
+
 # Audio ACDB - land - from land 6.0.1 MMB29M V10.2.2.0.MALMIXM
 vendor/etc/land_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb|7e025d57090fb623d4502b732a6edf409c3788ab
 vendor/etc/land_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb|1d0f1f77807f0fc6c9a2cdc4b98a2aad2908b11e
@@ -1978,3 +1993,16 @@ vendor/radio/qcril_database/qcril.db|43b7d5e7ededc9cd5c0b1f7a8941d21d4eb0c9c1
 # Radio - IMS - from Tissot PKQ1.180917.001 V10.0.24.0.PDHMIXM
 vendor/bin/imsdatadaemon|56e1ab6f6f6679261bcd36dd218097632da866b6
 vendor/bin/imsqmidaemon|0e5cf08e7cbd4e34fb69e6644a8c7d5e6715c306
+
+# Sensors - from daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
+vendor/bin/sensors.qti|a2294878cef6ab4a6e51968e88799585c7d456fd
+vendor/lib/hw/activity_recognition.msm8937.so|f9247646a5e2b28473753da06f832ae5f702f7c4
+vendor/lib/libsensor1.so|48727a05c1b91051d5ec53860124f1f1c0d8ca53
+vendor/lib/libsensor_reg.so|8ae3b9d1a54feb9f0af55a8fff50410f53660318
+vendor/lib/libsensor_user_cal.so|df85342393b56994b4f4b4c33aad97928bc6f023
+vendor/lib/sensors.ssc.so|c4b5ee167e5b06fde7143007b87ea5dbe90b0565
+vendor/lib64/hw/activity_recognition.msm8937.so|5531da4cf2451f899602fb7e3f0e80775bb7e5ff
+vendor/lib64/libsensor1.so|48dedf69781fb146fc35e622f1c80a635530da22
+vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
+vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
+vendor/lib64/sensors.ssc.so|3d6eed945ab3ec2d91517cd6e9941df17a290445
