@@ -1,0 +1,6 @@
+# Misc
+on property:ro.xiaomi.series=rova
+    stop vendor.hvdcp_opti
+
+on property:ro.xiaomi.series=ulysse
+    stop vendor.hvdcp_opti

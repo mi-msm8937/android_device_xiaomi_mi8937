@@ -139,6 +139,7 @@ PRODUCT_PACKAGES += \
     init.mi8937.camera.rc \
     init.mi8937.fingerprint.rc \
     init.mi8937.ir.rc \
+    init.mi8937.misc.rc \
     init.mi8937.sensors.rc
 
 PRODUCT_PACKAGES += \
