@@ -2057,3 +2057,6 @@ vendor/lib64/libsensor1.so|48dedf69781fb146fc35e622f1c80a635530da22
 vendor/lib64/libsensor_reg.so|74659858f5abcfa0d8c826af2e2e46addc9f5f87
 vendor/lib64/libsensor_user_cal.so|92de798c64f9e23ca1069a5a4bec5895fafa9a22
 vendor/lib64/sensors.ssc.so|3d6eed945ab3ec2d91517cd6e9941df17a290445
+
+# Wi-Fi - from daisy
+vendor/bin/wcnss_service|f8ecd38a41b6b7f832380b489e0c9804c34174d8
