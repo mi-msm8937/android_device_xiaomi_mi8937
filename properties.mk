@@ -19,3 +19,7 @@ persist.ov16885.flash.light=275
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.sf.lcd_density=267
+
+# Fingerprint
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.fp.vendor=none
