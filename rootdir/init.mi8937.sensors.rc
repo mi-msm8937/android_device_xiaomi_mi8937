@@ -7,8 +7,12 @@ on property:ro.xiaomi.device=santoni
     mount none /vendor/etc/sensors/${ro.xiaomi.device}_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
     restart vendor.sensors.qti
 
-on property:ro.xiaomi.series=rova
-    mount none /vendor/etc/sensors/${ro.xiaomi.series}_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+on property:ro.xiaomi.device=rolex
+    mount none /vendor/etc/sensors/${ro.xiaomi.device}_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    restart vendor.sensors.qti
+
+on property:ro.xiaomi.device=riva
+    mount none /vendor/etc/sensors/${ro.xiaomi.device}_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
     restart vendor.sensors.qti
 
 on property:ro.xiaomi.series=ulysse
