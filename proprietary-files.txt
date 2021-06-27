@@ -254,6 +254,9 @@ vendor/etc/prada_acdbdata/QRD/QRD_Hdmi_cal.acdb|39f1d884c5cd40691bc9349bf57372c6
 vendor/etc/prada_acdbdata/QRD/QRD_Headset_cal.acdb|bf2bec4b1934f7f006ee40359b6186855b400e04
 vendor/etc/prada_acdbdata/QRD/QRD_Speaker_cal.acdb|49d26f0e6530f3f60dbaaa800378c1e57863965c
 
+# Charger - from daisy
+vendor/bin/hvdcp_opti|7ee82dd264c7c349fb498111a61d5009ae9f0da2
+
 # Consumer IR - LED - from rolex 7.1.2 N2G47H V10.2.3.0.NCCMIXM
 vendor/lib/hw/consumerir.led.so|53830d64d63d6cc405209d8d4cafea102dcd7b54
 vendor/lib64/hw/consumerir.led.so|d5145eb1712c8e0895016282f3e348c98ad17f7b
