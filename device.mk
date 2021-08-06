@@ -46,6 +46,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshims_android \
     libshims_binder \
+    libshims_ui \
     libwui
 
 # Rootdir
