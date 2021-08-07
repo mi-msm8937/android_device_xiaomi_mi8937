@@ -30,3 +30,16 @@ on property:ro.vendor.xiaomi.series=ulysse
     restart vendor.ir-hal-1-0
 
 ##### ulysse end   #####
+
+##### rova begin #####
+
+# Audio
+on property:ro.vendor.xiaomi.device=rolex
+    mount none /vendor/etc/rolex_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
+    restart vendor.audio-hal
+
+on property:ro.vendor.xiaomi.device=riva
+    mount none /vendor/etc/riva_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
+    restart vendor.audio-hal
+
+##### rova end #####
