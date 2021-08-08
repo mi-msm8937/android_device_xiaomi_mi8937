@@ -19,6 +19,11 @@ $(call inherit-product, device/xiaomi/ulova/device.mk)
 PRODUCT_PACKAGES += \
     xiaomi_ulysse_overlay_lineage
 
+# Overlays
+PRODUCT_PACKAGES += \
+    xiaomi_rolex_overlay_lineage \
+    xiaomi_riva_overlay_lineage
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ulova
 PRODUCT_NAME := lineage_ulova
