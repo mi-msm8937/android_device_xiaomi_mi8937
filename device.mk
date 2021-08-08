@@ -10,6 +10,8 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
 # Overlays
 PRODUCT_PACKAGES += \
+    xiaomi_rolex_overlay \
+    xiaomi_riva_overlay \
     xiaomi_ugg_overlay \
     xiaomi_ugglite_overlay
 
