@@ -12,18 +12,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from ulysse device
-$(call inherit-product, device/xiaomi/ulysse/device.mk)
+# Inherit from ulova device
+$(call inherit-product, device/xiaomi/ulova/device.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := ulysse
-PRODUCT_NAME := lineage_ulysse
+PRODUCT_DEVICE := ulova
+PRODUCT_NAME := lineage_ulova
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi Note 5A / Y1
+PRODUCT_MODEL := Redmi 4A / 5A / Note 5A / Y1
 PRODUCT_MANUFACTURER := Xiaomi
 TARGET_VENDOR := Xiaomi
 

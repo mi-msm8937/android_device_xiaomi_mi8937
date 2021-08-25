@@ -70,7 +70,7 @@ fi
 
 set -e
 
-export DEVICE=ulysse
+export DEVICE=ulova
 export DEVICE_COMMON=msm8937-common
 export VENDOR=xiaomi
 

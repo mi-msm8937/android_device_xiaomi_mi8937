@@ -13,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse"
-#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse"
+#define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulova"
+#define LOG_VERBOSE "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulova"
 
 #include <android-base/properties.h>
 
