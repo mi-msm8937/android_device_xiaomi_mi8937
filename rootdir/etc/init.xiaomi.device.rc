@@ -4,6 +4,15 @@ service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
     group root
     oneshot
 
+# Sensors
+service vendor.sensors.qti /vendor/bin/sensors.qti
+    override
+    disabled
+    class core
+    user system
+    group system
+    writepid /dev/cpuset/system-background/tasks
+
 ##### ulysse begin #####
 
 # Audio
@@ -31,6 +40,11 @@ on property:ro.vendor.xiaomi.series=ulysse
     setprop ro.hardware.consumerir lirc
     restart vendor.ir-hal-1-0
 
+# Sensors
+on property:ro.vendor.xiaomi.series=ulysse
+    mount none /vendor/etc/sensors/ulysse_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+
 ##### ulysse end   #####
 
 ##### rova begin #####
@@ -43,5 +57,14 @@ on property:ro.vendor.xiaomi.device=rolex
 on property:ro.vendor.xiaomi.device=riva
     mount none /vendor/etc/riva_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
     restart vendor.audio-hal
+
+# Sensors
+on property:ro.vendor.xiaomi.device=rolex
+    mount none /vendor/etc/sensors/rolex_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+
+on property:ro.vendor.xiaomi.device=riva
+    mount none /vendor/etc/sensors/riva_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
 
 ##### rova end #####
