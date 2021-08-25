@@ -6,7 +6,7 @@ include $(CLEAR_VARS)
 
 LOCAL_HEADER_LIBRARIES := libhardware_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
-LOCAL_HEADER_LIBRARIES += camera_common_headers
+LOCAL_HEADER_LIBRARIES += ulysse_camera_common_headers
 
 MM_CAM_FILES := \
         src/mm_camera_interface.c \
@@ -56,7 +56,7 @@ LOCAL_CFLAGS += -Wall -Wextra -Wno-error -Wno-implicit-function-declaration
 
 LOCAL_SRC_FILES := $(MM_CAM_FILES)
 
-LOCAL_MODULE           := libmmcamera_interface
+LOCAL_MODULE           := libUmcamera_interface
 LOCAL_PRELINK_MODULE   := false
 LOCAL_SHARED_LIBRARIES := libdl libcutils liblog
 LOCAL_MODULE_TAGS := optional

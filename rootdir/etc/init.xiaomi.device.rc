@@ -20,8 +20,10 @@ service ulysse_qcamerasvr /system/vendor/bin/ulysse_mm-qcamera-daemon
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.xiaomi.series=ulysse
+    setprop ro.hardware.camera ulysse
     stop qcamerasvr
     enable ulysse_qcamerasvr
+    restart vendor.camera-provider-2-4
 
 # IR
 on property:ro.vendor.xiaomi.series=ulysse
