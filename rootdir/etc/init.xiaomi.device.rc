@@ -4,6 +4,17 @@ service vendor.xiaomi_device_script /vendor/bin/init.xiaomi.device.sh
     group root
     oneshot
 
+##### ulysse begin #####
+
+# Audio
+on property:ro.vendor.xiaomi.series=ulysse
+    mount none /vendor/etc/ulysse_acdbdata /vendor/etc/acdbdata bind
+    restart vendor.audio-hal
+
 # IR
-on boot
+on property:ro.vendor.xiaomi.series=ulysse
     chown system system /dev/lirc0
+    setprop ro.hardware.consumerir lirc
+    restart vendor.ir-hal-1-0
+
+##### ulysse end   #####
