@@ -28,7 +28,7 @@ PRODUCT_COPY_FILES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulysse
+    android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulova
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -59,4 +59,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/xiaomi/ulysse/ulysse-vendor.mk)
+$(call inherit-product, vendor/xiaomi/ulova/ulova-vendor.mk)
