@@ -3,27 +3,27 @@
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
 
 # ACDB - from ugg
-vendor/etc/acdbdata/MTP/International/INTER_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/International/INTER_General_cal.acdb
-vendor/etc/acdbdata/MTP/International/INTER_Global_cal.acdb
-vendor/etc/acdbdata/MTP/International/INTER_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/International/INTER_Hdmi_cal.acdb
-vendor/etc/acdbdata/MTP/International/INTER_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/International/INTER_Speaker_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_Bluetooth_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_General_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_Global_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_Handset_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_Hdmi_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_Headset_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/International/INTER_Speaker_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/ulysse_acdbdata/MTP/MTP_Speaker_cal.acdb
 
 # Camera - from ugg
 vendor/bin/mm-qcamera-daemon
@@ -493,7 +493,7 @@ vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix_india.xml
 vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix.xml
 
 # ConsumerIR - from ugg
-vendor/lib64/hw/consumerir.msm8937.so
+vendor/lib64/hw/consumerir.lirc.so
 
 # Fingerprint - FPC - from ugg
 vendor/lib64/hw/fingerprint.default.so
