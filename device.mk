@@ -33,6 +33,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/blankfile:$(TARGET_COPY_OUT_VENDOR)/etc/acdbdata/.placeholder
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.ulysse \
+    libUmcamera_interface \
+    libUmjpeg_interface \
+    libUmlib2d_interface \
+    libUomx_core
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.xiaomi_ulova
