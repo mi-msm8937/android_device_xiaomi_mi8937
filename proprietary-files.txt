@@ -3,16 +3,30 @@
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
 
 # ACDB
-etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-etc/acdbdata/MTP/MTP_General_cal.acdb:vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-etc/acdbdata/MTP/MTP_Global_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
-etc/acdbdata/MTP/MTP_Handset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-etc/acdbdata/MTP/MTP_Hdmi_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
-etc/acdbdata/MTP/MTP_Headset_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-etc/acdbdata/MTP/MTP_Speaker_cal.acdb:vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_General_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_Global_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/International/INTER_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_General_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/msm8952-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
 # Camera
-bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
+vendor/bin/mm-qcamera-daemon
 vendor/lib/libchromaflash.so
 vendor/lib/libflash_gpio.so
 vendor/lib/libflash_pmic.so
@@ -462,34 +476,34 @@ vendor/lib/libchromatix_s5k5e8_oef0501_ofilm_d6_weixin_preview_3a.so
 vendor/lib/libchromatix_s5k5e8_oef0501_ofilm_d6_weixin_video.so
 
 # Camera configs
-etc/camera/camera_config.xml:vendor/etc/camera/camera_config.xml|3c0bc38854caeb4e2728762c4bdabcc5c7ba3f5a
-etc/camera/csidtg_camera.xml:vendor/etc/camera/csidtg_camera.xml
+vendor/etc/camera/camera_config.xml|3c0bc38854caeb4e2728762c4bdabcc5c7ba3f5a
+vendor/etc/camera/csidtg_camera.xml
 
 # Camera configs - Chromatix
-etc/camera/ov13855_f13855bd_qtech_d6_chromatix.xml:vendor/etc/camera/ov13855_f13855bd_qtech_d6_chromatix.xml
-etc/camera/ov13855_f13855bd_qtech_d6s_chromatix_india.xml:vendor/etc/camera/ov13855_f13855bd_qtech_d6s_chromatix_india.xml
-etc/camera/ov16885_ojf0541_d6_chromatix.xml:vendor/etc/camera/ov16885_ojf0541_d6_chromatix.xml
-etc/camera/s5k3l8_ohp0502_ofilm_d6_chromatix_india.xml:vendor/etc/camera/s5k3l8_ohp0502_ofilm_d6_chromatix_india.xml
-etc/camera/s5k3l8_ohp0502_ofilm_d6_chromatix.xml:vendor/etc/camera/s5k3l8_ohp0502_ofilm_d6_chromatix.xml
-etc/camera/s5k3p8sp_d16s01n_sunny_d6s_chromatix_india.xml:vendor/etc/camera/s5k3p8sp_d16s01n_sunny_d6s_chromatix_india.xml
-etc/camera/s5k3p8sp_d16s01n_sunny_d6s_chromatix.xml:vendor/etc/camera/s5k3p8sp_d16s01n_sunny_d6s_chromatix.xml
-etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix_india.xml:vendor/etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix_india.xml
-etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix.xml:vendor/etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix.xml
-etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix_india.xml:vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix_india.xml
-etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix.xml:vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix.xml
+vendor/etc/camera/ov13855_f13855bd_qtech_d6_chromatix.xml
+vendor/etc/camera/ov13855_f13855bd_qtech_d6s_chromatix_india.xml
+vendor/etc/camera/ov16885_ojf0541_d6_chromatix.xml
+vendor/etc/camera/s5k3l8_ohp0502_ofilm_d6_chromatix_india.xml
+vendor/etc/camera/s5k3l8_ohp0502_ofilm_d6_chromatix.xml
+vendor/etc/camera/s5k3p8sp_d16s01n_sunny_d6s_chromatix_india.xml
+vendor/etc/camera/s5k3p8sp_d16s01n_sunny_d6s_chromatix.xml
+vendor/etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix_india.xml
+vendor/etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix.xml
+vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix_india.xml
+vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix.xml
 
 # ConsumerIR
-lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.msm8937.so
+vendor/lib64/hw/consumerir.msm8937.so
 
 # Fingerprint - FPC
 lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.msm8937.so
 lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
 
 # Fingerprint - Goodix - from vince
-etc/firmware/goodix_firmware.bin:vendor/firmware/goodix_firmware.bin
-lib64/libgf_algo.so:vendor/lib64/libgf_algo.so
-lib64/libgf_ca.so:vendor/lib64/libgf_ca.so
-lib64/libgf_hal.so:vendor/lib64/libgf_hal.so
+vendor/firmware/goodix_firmware.bin
+vendor/lib64/libgf_algo.so
+vendor/lib64/libgf_ca.so
+vendor/lib64/libgf_hal.so
 
 # Fingerprint - Goodix HAL - from daisy
 vendor/lib64/hw/gf_fingerprint.default.so|b09aba758c469f3e3ff04197a723a15fbdfafea1
