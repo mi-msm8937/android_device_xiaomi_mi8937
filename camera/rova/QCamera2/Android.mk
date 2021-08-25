@@ -132,7 +132,7 @@ LOCAL_STATIC_LIBRARIES := android.hardware.camera.common@1.0-helper
 
 
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_MODULE := camera.$(TARGET_BOARD_PLATFORM)
+LOCAL_MODULE := camera.rova
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 

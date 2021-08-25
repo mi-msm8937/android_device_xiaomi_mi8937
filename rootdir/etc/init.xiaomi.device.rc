@@ -55,6 +55,11 @@ service baseband-sh /vendor/bin/init.baseband.sh
     group system
     oneshot
 
+# Camera
+on property:ro.vendor.xiaomi.series=rova
+    setprop ro.hardware.camera rova
+    restart vendor.camera-provider-2-4
+
 # IR
 on property:ro.vendor.xiaomi.device=rolex
     chown system system /sys/class/leds/infrared/transmit

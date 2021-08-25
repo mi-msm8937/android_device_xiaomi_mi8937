@@ -37,6 +37,7 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.rova \
     camera.ulysse \
     libUmcamera_interface \
     libUmjpeg_interface \
