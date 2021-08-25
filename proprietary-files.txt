@@ -1,8 +1,8 @@
-# All unpinned blobs below are extracted from ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
+# ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
 # vince Package version: vince-user 8.1.0 OPM1.171019.019 V11.0.2.0.OEGMIXM release-keys
 # daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
 
-# ACDB
+# ACDB - from ugg
 vendor/etc/acdbdata/MTP/International/INTER_Bluetooth_cal.acdb
 vendor/etc/acdbdata/MTP/International/INTER_General_cal.acdb
 vendor/etc/acdbdata/MTP/International/INTER_Global_cal.acdb
@@ -25,7 +25,7 @@ vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 
-# Camera
+# Camera - from ugg
 vendor/bin/mm-qcamera-daemon
 vendor/lib/libchromaflash.so
 vendor/lib/libflash_gpio.so
@@ -52,7 +52,7 @@ vendor/lib/libseemore.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 
-# Camera - mmcamera
+# Camera - mmcamera - from ugg
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_dcrf.so
@@ -137,11 +137,11 @@ vendor/lib/libmmcamera_tuning_lookup.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_ubifocus_lib.so
 
-# Camera - Actuators
+# Camera - Actuators - from ugg
 vendor/lib/libactuator_dw9714.so
 vendor/lib/libactuator_fp5510_f13855bd.so
 
-# Camera - Eeproms
+# Camera - Eeproms - from ugg
 vendor/lib/libmmcamera_ov13855_f13855bd_qtech_eeprom.so
 vendor/lib/libmmcamera_ov16885_ojf0541_ofilm_d6s_eeprom.so
 vendor/lib/libmmcamera_s5k3l8_ohp0502_ofilm_eeprom.so
@@ -149,7 +149,7 @@ vendor/lib/libmmcamera_s5k3p8sp_d16s01n_sunny_d6s_eeprom.so
 vendor/lib/libmmcamera_s5k5e8_f5e8ybf_qtech_eeprom.so
 vendor/lib/libmmcamera_s5k5e8_oef0501_ofilm_eeprom.so
 
-# Camera - Sensors
+# Camera - Sensors - from ugg
 vendor/lib/libmmcamera_ov13855_f13855bd_d6.so
 vendor/lib/libmmcamera_ov16885_ojf0541_d6.so
 vendor/lib/libmmcamera_s5k3l8_ohp0502_d6.so
@@ -157,7 +157,7 @@ vendor/lib/libmmcamera_s5k3p8sp_d16s01n_d6s.so
 vendor/lib/libmmcamera_s5k5e8_f5e8ybf_d6.so
 vendor/lib/libmmcamera_s5k5e8_oef0501_d6.so
 
-# Camera - Chromatix
+# Camera - Chromatix - from ugg
 vendor/lib/libchromatix_ov13855_f13855bd_qtech_d6_common.so
 vendor/lib/libchromatix_ov13855_f13855bd_qtech_d6_cpp_hfr_120.so
 vendor/lib/libchromatix_ov13855_f13855bd_qtech_d6_cpp_hfr_60.so
@@ -475,11 +475,11 @@ vendor/lib/libchromatix_s5k5e8_oef0501_ofilm_d6_preview.so
 vendor/lib/libchromatix_s5k5e8_oef0501_ofilm_d6_weixin_preview_3a.so
 vendor/lib/libchromatix_s5k5e8_oef0501_ofilm_d6_weixin_video.so
 
-# Camera configs
+# Camera configs - from ugg
 vendor/etc/camera/camera_config.xml|3c0bc38854caeb4e2728762c4bdabcc5c7ba3f5a
 vendor/etc/camera/csidtg_camera.xml
 
-# Camera configs - Chromatix
+# Camera configs - Chromatix - from ugg
 vendor/etc/camera/ov13855_f13855bd_qtech_d6_chromatix.xml
 vendor/etc/camera/ov13855_f13855bd_qtech_d6s_chromatix_india.xml
 vendor/etc/camera/ov16885_ojf0541_d6_chromatix.xml
@@ -492,12 +492,12 @@ vendor/etc/camera/s5k5e8_f5e8ybf_qtech_d6_chromatix.xml
 vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix_india.xml
 vendor/etc/camera/s5k5e8_oef0501_ofilm_d6_chromatix.xml
 
-# ConsumerIR
+# ConsumerIR - from ugg
 vendor/lib64/hw/consumerir.msm8937.so
 
-# Fingerprint - FPC
-lib64/hw/fingerprint.msm8937.so:vendor/lib64/hw/fingerprint.msm8937.so
-lib64/lib_fpc_tac_shared.so:vendor/lib64/lib_fpc_tac_shared.so
+# Fingerprint - FPC - from ugg
+vendor/lib64/hw/fingerprint.default.so
+vendor/lib64/lib_fpc_tac_shared.so
 
 # Fingerprint - Goodix - from vince
 vendor/firmware/goodix_firmware.bin
