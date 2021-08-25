@@ -16,7 +16,8 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, device/xiaomi/ulova/device.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+PRODUCT_PACKAGES += \
+    xiaomi_ulysse_overlay_lineage
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := ulova
