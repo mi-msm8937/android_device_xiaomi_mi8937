@@ -62,6 +62,11 @@ on property:ro.vendor.xiaomi.device=riva
 on property:ro.vendor.xiaomi.series=rova
     enable baseband-sh
 
+# Camera
+on property:ro.vendor.xiaomi.series=rova
+    setprop ro.hardware.camera rova
+    restart vendor.camera-provider-2-4
+
 # IR
 on property:ro.vendor.xiaomi.device=rolex
     chown system system /sys/class/leds/infrared/transmit
