@@ -27,9 +27,36 @@ static const variant_info_t ugg_info = {
     .build_fingerprint = "xiaomi/ugg/ugg:7.1.2/N2G47H/V11.0.2.0.NDKMIXM:user/release-keys",
 };
 
+static const variant_info_t rolex_info = {
+    .brand = "Xiaomi",
+    .device = "rolex",
+    .marketname = "",
+    .model = "Redmi 4A",
+    .build_fingerprint = "Xiaomi/rolex/rolex:7.1.2/N2G47H/V10.2.3.0.NCCMIXM:user/release-keys",
+};
+
+static const variant_info_t riva_info = {
+    .brand = "Xiaomi",
+    .device = "riva",
+    .marketname = "",
+    .model = "Redmi 5A",
+    .build_fingerprint = "Xiaomi/riva/riva:7.1.2/N2G47H/V10.1.1.0.NCKMIFI:user/release-keys",
+};
+
 static void determine_device()
 {
-    std::string fdt_model;
+    std::string fdt_model, proc_cmdline;
+
+    android::base::ReadFileToString("/proc/cmdline", &proc_cmdline, true);
+    if (proc_cmdline.find("S88503") != proc_cmdline.npos) {
+        set_variant_props(rolex_info);
+        return;
+    }
+    else if (proc_cmdline.find("S88505") != proc_cmdline.npos) {
+        set_variant_props(riva_info);
+        return;
+    }
+
     android::base::ReadFileToString("/sys/firmware/devicetree/base/model", &fdt_model, true);
     if (fdt_model.find("MSM8917") != fdt_model.npos)
         set_variant_props(ugglite_info);
