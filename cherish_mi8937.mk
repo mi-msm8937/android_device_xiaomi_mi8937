@@ -16,6 +16,9 @@ $(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 $(call inherit-product, device/xiaomi/mi8937/device.mk)
 
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-cherish
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mi8937
 PRODUCT_NAME := cherish_mi8937
