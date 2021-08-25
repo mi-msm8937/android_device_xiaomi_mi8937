@@ -11,6 +11,18 @@ on property:ro.vendor.xiaomi.series=ulysse
     mount none /vendor/etc/ulysse_acdbdata /vendor/etc/acdbdata bind
     restart vendor.audio-hal
 
+# Camera
+service ulysse_qcamerasvr /system/vendor/bin/ulysse_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
+on property:ro.vendor.xiaomi.series=ulysse
+    stop qcamerasvr
+    enable ulysse_qcamerasvr
+
 # IR
 on property:ro.vendor.xiaomi.series=ulysse
     chown system system /dev/lirc0
