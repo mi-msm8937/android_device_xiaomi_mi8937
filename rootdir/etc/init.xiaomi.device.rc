@@ -51,10 +51,12 @@ on property:ro.vendor.xiaomi.series=ulysse
 
 # Audio
 on property:ro.vendor.xiaomi.device=rolex
+    mount none /vendor/etc/rova_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/rolex_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
     restart vendor.audio-hal
 
 on property:ro.vendor.xiaomi.device=riva
+    mount none /vendor/etc/rova_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/riva_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
     restart vendor.audio-hal
 
@@ -63,8 +65,17 @@ on property:ro.vendor.xiaomi.series=rova
     enable baseband-sh
 
 # Camera
+service rova_qcamerasvr /system/vendor/bin/rova_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
 on property:ro.vendor.xiaomi.series=rova
     setprop ro.hardware.camera rova
+    stop qcamerasvr
+    enable rova_qcamerasvr
     restart vendor.camera-provider-2-4
 
 # IR
