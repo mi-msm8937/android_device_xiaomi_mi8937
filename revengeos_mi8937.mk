@@ -15,6 +15,9 @@ $(call inherit-product, vendor/revengeos/config/common.mk)
 # Inherit from mi8937 device
 $(call inherit-product, device/xiaomi/mi8937/device.mk)
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-revengeos
+
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mi8937
 PRODUCT_NAME := revengeos_mi8937
