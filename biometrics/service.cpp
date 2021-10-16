@@ -29,6 +29,7 @@
 
 int fingerprint_type = 0;
 bool fp_type_2_is_goodix = false;
+bool fp_type_2_use_cancel_hack = true;
 
 static constexpr char kGoodixFpDev[] = "/dev/goodix_fp";
 
@@ -46,6 +47,10 @@ int main() {
             if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
                 ALOGD("Enable workarounds for goodix.");
                 fp_type_2_is_goodix = true;
+                if (android::base::GetProperty("vendor.fingerprint.goodix.disable_notify_cancel_hack","") == "1") {
+                    fp_type_2_use_cancel_hack = false;
+                    ALOGD("Disable notify client on cancel hack for goodix.");
+                }
             }
             break;
         case 1:
