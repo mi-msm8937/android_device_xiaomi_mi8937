@@ -32,6 +32,7 @@
 
 extern int fingerprint_type;
 extern bool fp_type_2_is_goodix;
+extern bool fp_type_2_use_cancel_hack;
 
 namespace android {
 namespace hardware {
@@ -196,7 +197,7 @@ Return<uint64_t> BiometricsFingerprint::getAuthenticatorId() {
 Return<RequestStatus> BiometricsFingerprint::cancel() {
     /* notify client on cancel hack */
     int ret = mDevice->cancel(mDevice);
-    if (fingerprint_type == 2) {
+    if (fingerprint_type == 2 && fp_type_2_use_cancel_hack) {
         ALOG(LOG_VERBOSE, LOG_TAG, "cancel() %d\n", ret);
         if (ret == 0) {
             fingerprint_msg_t msg;
