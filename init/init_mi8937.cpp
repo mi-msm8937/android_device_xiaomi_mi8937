@@ -81,7 +81,7 @@ static void determine_device_land(const std::string &proc_cmdline)
     if (proc_cmdline.find("S88537AC1") != proc_cmdline.npos || proc_cmdline.find("S88537EC1") != proc_cmdline.npos)
         property_override("ro.vendor.fingerprint.supported", "0");
     else
-        property_override("ro.vendor.fingerprint.supported", "1");
+        property_override("ro.vendor.fingerprint.supported", "2");
 }
 
 static void determine_device_santoni(const std::string &proc_cmdline)
@@ -91,7 +91,7 @@ static void determine_device_santoni(const std::string &proc_cmdline)
     if (proc_cmdline.find("S88536CA2") != proc_cmdline.npos)
         set_ro_build_prop("model", "Redmi 4", true);
 
-    property_override("ro.vendor.fingerprint.supported", "1");
+    property_override("ro.vendor.fingerprint.supported", "2");
 }
 
 static void determine_device()
@@ -118,7 +118,7 @@ static void determine_device()
         set_variant_props(ugglite_info);
     else if (fdt_model.find("MSM8937") != fdt_model.npos) {
         set_variant_props(prada_info);
-        property_override("ro.vendor.fingerprint.supported", "1");
+        property_override("ro.vendor.fingerprint.supported", "2");
     }
     else if (fdt_model.find("MSM8940") != fdt_model.npos)
         set_variant_props(ugg_info);
