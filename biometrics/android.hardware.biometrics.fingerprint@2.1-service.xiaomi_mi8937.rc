@@ -28,14 +28,10 @@ on post-fs-data
     # Create dir for fpc
     mkdir /data/fpc 0770 system system
 
-on property:ro.vendor.xiaomi.device=ugg
+on property:ro.vendor.fingerprint.supported=1
     enable vendor.fps_hal
 
-on property:ro.vendor.xiaomi.device=ugglite
-    stop vendor.fps_hal
-    mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
-
-on property:ro.vendor.xiaomi.series=rova
+on property:ro.vendor.fingerprint.supported=0
     stop vendor.fps_hal
     mount none /vendor/etc/permissions/blank.xml /vendor/etc/permissions/android.hardware.fingerprint.xml bind
 
