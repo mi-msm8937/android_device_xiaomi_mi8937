@@ -5,8 +5,8 @@
 //
 
 cc_library_static {
-    name: "libinit_ulova",
+    name: "libinit_mi8937",
     defaults: ["//device/xiaomi/msm8937-common:libinit_msm8937_defaults"],
-    srcs: ["init_ulova.cpp"],
+    srcs: ["init_mi8937.cpp"],
     whole_static_libs: ["//device/xiaomi/msm8937-common:libinit_msm8937"],
 }
