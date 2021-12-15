@@ -10,7 +10,7 @@ include device/xiaomi/msm8937-common/BoardConfigCommon.mk
 DEVICE_PATH := device/xiaomi/mi8937
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := mi8937,ulova,ulysse,ugglite,ugg,rova,rolex,riva
+TARGET_OTA_ASSERT_DEVICE := mi8937,landtoni,land,santoni,prada,ulova,ulysse,ugglite,ugg,rova,rolex,riva
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937

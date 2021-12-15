@@ -8,18 +8,47 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 			setprop ro.vendor.xiaomi.device riva
 		fi
 		setprop ro.vendor.xiaomi.series rova
+		# Fingerprint
+		setprop ro.vendor.fingerprint.supported 0
 		;;
 	"Qualcomm Technologies, Inc. MSM8917 QRD SKU5")
 		setprop ro.vendor.xiaomi.device riva
 		setprop ro.vendor.xiaomi.series rova
+		# Fingerprint
+		setprop ro.vendor.fingerprint.supported 0
 		;;
 	"Qualcomm Technologies, Inc. MSM8917-PMI8937 MTP")
 		setprop ro.vendor.xiaomi.device ugglite
 		setprop ro.vendor.xiaomi.series ulysse
+		# Fingerprint
+		setprop ro.vendor.fingerprint.supported 0
 		;;
 	"Qualcomm Technologies, Inc. MSM8940-PMI8937 MTP")
 		setprop ro.vendor.xiaomi.device ugg
 		setprop ro.vendor.xiaomi.series ulysse
+		# Fingerprint
+		setprop ro.vendor.fingerprint.supported 1
+		;;
+	"Qualcomm Technologies, Inc. MSM8937-PMI8950 QRD SKU1")
+		setprop ro.vendor.xiaomi.device land
+		setprop ro.vendor.xiaomi.series landtoni
+		# Fingerprint
+		if grep -E "S88537AC1|S88537EC1" /proc/cmdline ; then
+			setprop ro.vendor.fingerprint.supported 0
+		else
+			setprop ro.vendor.fingerprint.supported 1
+		fi
+		;;
+	"Qualcomm Technologies, Inc. MSM8940-PMI8950 QRD SKU7")
+		setprop ro.vendor.xiaomi.device santoni
+		setprop ro.vendor.xiaomi.series landtoni
+		# Fingerprint
+		setprop ro.vendor.fingerprint.supported 1
+		;;
+	"Qualcomm Technologies, Inc. MSM8937-PMI8950 MTP")
+		setprop ro.vendor.xiaomi.device prada
+		# Fingerprint
+		setprop ro.vendor.fingerprint.supported 1
 		;;
 esac
 
