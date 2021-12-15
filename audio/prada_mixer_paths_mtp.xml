@@ -80,13 +80,15 @@
     <ctl name="EAR_S" value="ZERO" />
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
+    <ctl name="Lineout_1 amp" value="DISABLE"/>
+    <ctl name="headset amp" value="DISABLE"/>
     <ctl name="SPK" value="ZERO" />
     <ctl name="WSA Spk Switch" value="ZERO" />
     <ctl name="SpkrMono WSA_RDAC" value="ZERO" />
-    <ctl name="SpkrMono BOOST Switch" value="1" />
+    <ctl name="SpkrMono BOOST Switch" value="0" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
     <ctl name="EAR PA Gain" value="POS_1P5_DB" />
-    <ctl name="EAR PA Boost" value="ENABLE" />
+    <ctl name="EAR PA Boost" value="DISABLE" />
     <ctl name="MI2S_RX Channels" value="One" />
     <ctl name="MI2S_TX Channels" value="One" />
     <ctl name="PRI_MI2S_RX_DL_HL Switch" value="0" />
@@ -1252,8 +1254,11 @@
     </path>
 
     <path name="speaker">
-        <ctl name="RX3 MIX1 INP1" value="RX1" />
-        <ctl name="SPK" value="Switch" />
+        <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC2 MUX" value="RX2" />
+        <ctl name="HPHR" value="Switch" />
+        <ctl name="RX2 Digital Volume" value="83" />
+        <ctl name="Lineout_1 amp" value="ENABLE"/>
     </path>
 
     <path name="speaker-and-hdmi">
@@ -1293,6 +1298,11 @@
         <ctl name="IIR1 INP1 MUX" value="DEC1" />
    </path>
 
+   <path name="second-mic">
+        <path name="adc3" />
+        <ctl name="IIR1 INP1 MUX" value="DEC1" />
+   </path>
+
     <path name="handset">
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RDAC2 MUX" value="RX1" />
@@ -1313,6 +1323,9 @@
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX2 Digital Volume" value="84" />
+        <ctl name="headset amp" value="ENABLE"/>
     </path>
 
     <path name="headset-mic">
@@ -1344,11 +1357,19 @@
 
 
     <path name="voice-handset">
-        <path name="handset" />
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RDAC2 MUX" value="RX1" />
+        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="EAR PA Gain" value="POS_6_DB" />
+        <ctl name="EAR_S" value="Switch" />
+        <ctl name="headset amp" value="ENABLE"/>
     </path>
 
     <path name="voice-speaker">
-        <path name="speaker" />
+        <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC2 MUX" value="RX2" />
+        <ctl name="HPHR" value="Switch" />
+        <ctl name="Lineout_1 amp" value="ENABLE"/>
     </path>
 
     <path name="wsa-voice-speaker">
@@ -1359,8 +1380,18 @@
         <path name="speaker-mic" />
     </path>
 
+    <path name="voice-main-mic">
+        <path name="speaker-mic" />
+    </path>
+
     <path name="voice-headphones">
-        <path name="headphones" />
+        <ctl name="MI2S_RX Channels" value="Two" />
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC2 MUX" value="RX2" />
+        <ctl name="HPHL" value="Switch" />
+        <ctl name="HPHR" value="Switch" />
+        <ctl name="headset amp" value="ENABLE"/>
     </path>
 
     <path name="voice-speaker-and-voice-headphones">
@@ -1373,8 +1404,15 @@
     </path>
 
     <path name="speaker-and-headphones">
-        <path name="speaker" />
-        <path name="headphones" />
+        <ctl name="MI2S_RX Channels" value="Two" />
+        <ctl name="RX1 MIX1 INP1" value="RX1" />
+        <ctl name="RX2 MIX1 INP1" value="RX2" />
+        <ctl name="RDAC2 MUX" value="RX2" />
+        <ctl name="HPHL" value="Switch" />
+        <ctl name="HPHR" value="Switch" />
+        <ctl name="RX1 Digital Volume" value="83" />
+        <ctl name="RX2 Digital Volume" value="83" />
+        <ctl name="Lineout_1 amp" value="DUALMODE"/>
     </path>
 
     <path name="usb-headphones">
