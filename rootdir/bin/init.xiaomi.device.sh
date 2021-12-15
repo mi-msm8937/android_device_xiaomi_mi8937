@@ -36,19 +36,19 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 		if grep -E "S88537AC1|S88537EC1" /proc/cmdline ; then
 			setprop ro.vendor.fingerprint.supported 0
 		else
-			setprop ro.vendor.fingerprint.supported 1
+			setprop ro.vendor.fingerprint.supported 2
 		fi
 		;;
 	"Qualcomm Technologies, Inc. MSM8940-PMI8950 QRD SKU7")
 		setprop ro.vendor.xiaomi.device santoni
 		setprop ro.vendor.xiaomi.series landtoni
 		# Fingerprint
-		setprop ro.vendor.fingerprint.supported 1
+		setprop ro.vendor.fingerprint.supported 2
 		;;
 	"Qualcomm Technologies, Inc. MSM8937-PMI8950 MTP")
 		setprop ro.vendor.xiaomi.device prada
 		# Fingerprint
-		setprop ro.vendor.fingerprint.supported 1
+		setprop ro.vendor.fingerprint.supported 2
 		;;
 esac
 
