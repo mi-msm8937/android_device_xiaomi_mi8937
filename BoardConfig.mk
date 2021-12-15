@@ -7,14 +7,14 @@
 # Inherit from common msm8937-common
 include device/xiaomi/msm8937-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/ulova
+DEVICE_PATH := device/xiaomi/mi8937
 
 # Asserts
-TARGET_OTA_ASSERT_DEVICE := ulova,ulysse,ugglite,ugg,rova,rolex,riva
+TARGET_OTA_ASSERT_DEVICE := mi8937,ulova,ulysse,ugglite,ugg,rova,rolex,riva
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_ulova
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_ulova
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937
+TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
 
 # Kernel
 TARGET_KERNEL_CONFIG := mi8937_defconfig
@@ -33,4 +33,4 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/biometrics/sepolicy
 
 # Inherit from the proprietary version
-include vendor/xiaomi/ulova/BoardConfigVendor.mk
+include vendor/xiaomi/mi8937/BoardConfigVendor.mk

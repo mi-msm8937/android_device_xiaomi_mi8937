@@ -5,8 +5,8 @@
 //
 
 cc_library_static {
-    name: "init_xiaomi_ulova",
-    srcs: ["init_xiaomi_ulova.cpp"],
+    name: "init_xiaomi_mi8937",
+    srcs: ["init_xiaomi_mi8937.cpp"],
     whole_static_libs: ["//device/xiaomi/msm8937-common:libinit_xiaomi_msm8937"],
     include_dirs: ["system/core/init"],
     recovery_available: true,

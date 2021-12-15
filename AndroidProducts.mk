@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_ulova.mk
+    $(LOCAL_DIR)/lineage_mi8937.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_ulova-user \
-    lineage_ulova-userdebug \
-    lineage_ulova-eng
+    lineage_mi8937-user \
+    lineage_mi8937-userdebug \
+    lineage_mi8937-eng
