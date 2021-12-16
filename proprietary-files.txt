@@ -1465,6 +1465,15 @@ vendor/lib64/hw/gxfingerprint.santoni.so
 vendor/lib64/libSp_client.so
 vendor/lib64/libSpservice.so
 
+# Fingerprint - from prada
+vendor/bin/prada_gx_fpd
+vendor/lib64/hw/fingerprint.prada_goodix.so
+vendor/lib64/hw/fingerprint.prada_fpc.so
+vendor/lib64/hw/gxfingerprint.prada.so
+vendor/lib64/libPp_client.so
+vendor/lib64/libPpnav.so
+vendor/lib64/libPpservice.so
+
 # Display calibration - from rolex
 etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3a.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3a.xml
 etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3a.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3a.xml
