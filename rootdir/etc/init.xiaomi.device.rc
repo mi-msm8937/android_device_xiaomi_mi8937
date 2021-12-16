@@ -132,6 +132,15 @@ on property:ro.vendor.xiaomi.device=santoni
 
 ##### santoni end #####
 
+##### landtoni begin #####
+
+# Sensors
+on property:ro.vendor.xiaomi.series=landtoni
+    mount none /vendor/etc/sensors/landtoni_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
+    enable vendor.sensors.qti
+
+##### landtoni end #####
+
 ##### prada begin #####
 
 # Audio
