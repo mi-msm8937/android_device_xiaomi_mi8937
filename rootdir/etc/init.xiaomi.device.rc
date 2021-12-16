@@ -130,9 +130,12 @@ on property:ro.vendor.xiaomi.device=santoni
     mount none /vendor/etc/santoni_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
     restart vendor.audio-hal
 
-# Baseband
+# Camera
 on property:ro.vendor.xiaomi.device=santoni
-    enable baseband-sh
+    setprop ro.hardware.camera rova
+    stop qcamerasvr
+    enable rova_qcamerasvr
+    restart vendor.camera-provider-2-4
 
 ##### santoni end #####
 
