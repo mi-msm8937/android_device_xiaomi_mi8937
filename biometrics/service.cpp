@@ -17,6 +17,7 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service"
 
 #include <android/log.h>
+#include <android-base/file.h>
 #include <android-base/properties.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlSupport.h>
@@ -44,6 +45,9 @@ int main() {
     switch (fingerprint_type) {
         case 2:
             ALOGD("Fingerprint type is set to: %d", fingerprint_type);
+            if (!android::base::WriteStringToFile("disable", "/sys/devices/soc/soc:fpc1020/compatible_all", true)) {
+                ALOGE("Failed to reset fpc1020 driver.");
+            }
             if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
                 ALOGD("Enable workarounds for goodix.");
                 fp_type_2_is_goodix = true;
