@@ -170,6 +170,11 @@ on property:ro.vendor.xiaomi.device=prada
     mount none /vendor/etc/prada_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
     restart vendor.audio-hal
 
+# Camera
+on property:ro.vendor.xiaomi.device=prada && property:sys.boot_completed=1
+    stop vendor.camera-provider-2-4
+    stop qcamerasvr
+
 # IR (Temp)
 on property:ro.vendor.xiaomi.device=prada
     setprop ro.hardware.consumerir led
