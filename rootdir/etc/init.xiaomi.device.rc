@@ -111,8 +111,17 @@ on property:ro.vendor.xiaomi.device=land
     restart vendor.audio-hal
 
 # Camera
+service land_qcamerasvr /system/vendor/bin/land_mm-qcamera-daemon
+    disabled
+    class late_start
+    user camera
+    group camera system inet input graphics
+    writepid /dev/cpuset/system-background/tasks
+
 on property:ro.vendor.xiaomi.device=land
     setprop ro.hardware.camera land
+    stop qcamerasvr
+    enable land_qcamerasvr
     restart vendor.camera-provider-2-4
 
 ##### land end #####
