@@ -42,8 +42,13 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    camera.land \
     camera.rova \
     camera.ulysse \
+    libLmcamera_interface \
+    libLmjpeg_interface \
+    libLmlib2d_interface \
+    libLomx_core \
     libUmcamera_interface \
     libUmjpeg_interface \
     libUmlib2d_interface \
