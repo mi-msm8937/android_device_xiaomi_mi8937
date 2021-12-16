@@ -25,6 +25,7 @@
 #include "BiometricsFingerprint.h"
 
 int fingerprint_type = 0;
+bool fp_type_2_is_goodix = false;
 
 using android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_1::implementation::BiometricsFingerprint;
@@ -35,6 +36,13 @@ using android::sp;
 int main() {
     fingerprint_type = std::stoi(android::base::GetProperty("ro.vendor.fingerprint.supported", "0"));
     switch (fingerprint_type) {
+        case 2:
+            ALOGD("Fingerprint type is set to: %d", fingerprint_type);
+            if (android::base::GetProperty("persist.sys.fp.vendor","") == "goodix") {
+                ALOGD("Enable workarounds for goodix.");
+                fp_type_2_is_goodix = true;
+            }
+            break;
         case 1:
             ALOGD("Fingerprint type is set to: %d", fingerprint_type);
             break;
