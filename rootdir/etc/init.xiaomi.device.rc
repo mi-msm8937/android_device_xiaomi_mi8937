@@ -83,6 +83,7 @@ service rova_qcamerasvr /system/vendor/bin/rova_mm-qcamera-daemon
 on property:ro.vendor.xiaomi.series=rova
     setprop ro.hardware.camera rova
     stop qcamerasvr
+    mount none /vendor/etc/camera/rova_camera_config.xml /vendor/etc/camera/camera_config.xml bind
     enable rova_qcamerasvr
     restart vendor.camera-provider-2-4
 
@@ -145,6 +146,7 @@ on property:ro.vendor.xiaomi.device=santoni
 on property:ro.vendor.xiaomi.device=santoni
     setprop ro.hardware.camera rova
     stop qcamerasvr
+    mount none /vendor/etc/camera/santoni_camera_config.xml /vendor/etc/camera/camera_config.xml bind
     enable rova_qcamerasvr
     restart vendor.camera-provider-2-4
 
