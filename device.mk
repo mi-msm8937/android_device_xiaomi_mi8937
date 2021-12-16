@@ -13,6 +13,7 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
+    xiaomi_landtoni_overlay \
     xiaomi_rolex_overlay \
     xiaomi_riva_overlay \
     xiaomi_ugg_overlay \
