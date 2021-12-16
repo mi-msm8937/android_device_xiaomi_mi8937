@@ -30,6 +30,8 @@
 #include <inttypes.h>
 #include <unistd.h>
 
+extern int fingerprint_type;
+
 namespace android {
 namespace hardware {
 namespace biometrics {
@@ -47,7 +49,13 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
-    mDevice = openHal();
+    switch (fingerprint_type) {
+        case 1:
+            mDevice = openHal_1();
+            break;
+        default:
+            return;
+    }
     if (!mDevice) {
         ALOGE("Can't open HAL module");
         android::base::SetProperty("ro.vendor.fingerprint.failed", "1");
@@ -269,7 +277,7 @@ fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name) 
     return fp_device;
 }
 
-fingerprint_device_t* BiometricsFingerprint::openHal() {
+fingerprint_device_t* BiometricsFingerprint::openHal_1() {
     fingerprint_device_t *fp_device;
     std::string boot_fpsensor = android::base::GetProperty("ro.boot.fpsensor", "");
 

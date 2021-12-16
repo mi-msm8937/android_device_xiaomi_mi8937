@@ -17,11 +17,14 @@
 #define LOG_TAG "android.hardware.biometrics.fingerprint@2.1-service"
 
 #include <android/log.h>
+#include <android-base/properties.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
 #include <android/hardware/biometrics/fingerprint/2.1/IBiometricsFingerprint.h>
 #include <android/hardware/biometrics/fingerprint/2.1/types.h>
 #include "BiometricsFingerprint.h"
+
+int fingerprint_type = 0;
 
 using android::hardware::biometrics::fingerprint::V2_1::IBiometricsFingerprint;
 using android::hardware::biometrics::fingerprint::V2_1::implementation::BiometricsFingerprint;
@@ -30,6 +33,20 @@ using android::hardware::joinRpcThreadpool;
 using android::sp;
 
 int main() {
+    fingerprint_type = std::stoi(android::base::GetProperty("ro.vendor.fingerprint.supported", "0"));
+    switch (fingerprint_type) {
+        case 1:
+            ALOGD("Fingerprint type is set to: %d", fingerprint_type);
+            break;
+        case 0:
+            ALOGE("Fingerprint is unsupported.");
+            android::base::SetProperty("ro.vendor.fingerprint.failed", "1");
+            return 1;
+        default:
+            ALOGE("Invalid fingerprint type: %d", fingerprint_type);
+            return 1;
+    }
+
     android::sp<IBiometricsFingerprint> bio = BiometricsFingerprint::getInstance();
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
