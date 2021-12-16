@@ -1463,6 +1463,27 @@ vendor/lib64/hw/gf_fingerprint.default.so|b09aba758c469f3e3ff04197a723a15fbdfafe
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so|4b3e658f52dfe31d7883f19bbeb8e05d323ba607|feee131f714ed9a7dd93e7ba9bfc768cbf651426
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so|c9d0251df63d8e34b6d70a59ad7b774c9f640fa1
 
+# Fingerprint - from land
+vendor/bin/land_gx_fpcmd
+vendor/bin/land_gx_fpd
+vendor/lib64/hw/fingerprint.land_fpc.so
+vendor/lib64/hw/fingerprint.land_goodix.so
+vendor/lib64/hw/gxfingerprint.land.so
+vendor/lib64/libLp_client.so
+vendor/lib64/libLpnav.so
+vendor/lib64/libLpservice.so
+
+# Fingerprint - FPC - from santoni 8.2.1
+vendor/lib64/hw/fingerprint.santoni_fpc.so|8ebf8f6bc370cec26cfcf1daebdbbb31fd66ae09
+
+# Fingerprint - Goodix - from santoni
+vendor/bin/santoni_gx_fpcmd
+vendor/bin/santoni_gx_fpd
+vendor/lib64/hw/fingerprint.santoni_goodix.so
+vendor/lib64/hw/gxfingerprint.santoni.so
+vendor/lib64/libSp_client.so
+vendor/lib64/libSpservice.so
+
 # Display calibration - from rolex
 etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3a.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3a.xml
 etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3a.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3a.xml
