@@ -225,7 +225,7 @@ IBiometricsFingerprint* BiometricsFingerprint::getInstance() {
     return sInstance;
 }
 
-fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name) {
+fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name, const char *class_name) {
     int err;
     const hw_module_t *hw_mdl = nullptr;
 
@@ -233,9 +233,17 @@ fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name) 
         return nullptr;
 
     ALOGD("Opening fingerprint hal library...");
-    if (0 != (err = hw_get_module(hwmdl_name, &hw_mdl))) {
-        ALOGE("Can't open fingerprint HW Module, error: %d", err);
-        return nullptr;
+    ALOGD("%s: hwmdl_name=%s, class_name=%s.", __func__, hwmdl_name, class_name);
+    if (std::string(class_name).empty()) {
+        if (0 != (err = hw_get_module(hwmdl_name, &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module using hw_get_module, error: %d", err);
+            return nullptr;
+        }
+    } else {
+        if (0 != (err = hw_get_module_by_class(hwmdl_name, class_name, &hw_mdl))) {
+            ALOGE("Can't open fingerprint HW Module using hw_get_module_by_class, error: %d", err);
+            return nullptr;
+        }
     }
 
     if (hw_mdl == nullptr) {
@@ -277,8 +285,9 @@ fingerprint_device_t* BiometricsFingerprint::openTheHal(const char *hwmdl_name) 
     return fp_device;
 }
 
-void BiometricsFingerprint::setFpSensorProp(std::string hwmdl_name) {
+void BiometricsFingerprint::setFpSensorProp(std::string hwmdl_name, std::string class_name) {
     android::base::SetProperty("persist.vendor.fingerprint.hwmdl", hwmdl_name);
+    android::base::SetProperty("persist.vendor.fingerprint.class", class_name);
 }
 
 fingerprint_device_t* BiometricsFingerprint::openHal_1() {
@@ -287,21 +296,21 @@ fingerprint_device_t* BiometricsFingerprint::openHal_1() {
 
     if (!last_hwmdl_name.empty() && last_hwmdl_name != "failed") {
         ALOGI("Directly loading fingerprint HAL with hardware module id: %s.", last_hwmdl_name.c_str());
-        fp_device = BiometricsFingerprint::openTheHal(last_hwmdl_name.c_str());
+        fp_device = BiometricsFingerprint::openTheHal(last_hwmdl_name.c_str(),"");
         if (fp_device == nullptr) {
             ALOGE("Failed to load fingerprint HAL with hardware module id: %s.", last_hwmdl_name.c_str());
         } else {
-            BiometricsFingerprint::setFpSensorProp(last_hwmdl_name);
+            BiometricsFingerprint::setFpSensorProp(last_hwmdl_name, "");
             return fp_device;
         }
     } else {
         // FPC
         ALOGI("Trying to load FPC Fingerprint HAL (using default hardware module id).");
-        fp_device = BiometricsFingerprint::openTheHal(FINGERPRINT_HARDWARE_MODULE_ID);
+        fp_device = BiometricsFingerprint::openTheHal(FINGERPRINT_HARDWARE_MODULE_ID,"");
         if (fp_device == nullptr) {
             ALOGE("Failed to load fingerprint HAL with default hardware module id");
         } else {
-            BiometricsFingerprint::setFpSensorProp(FINGERPRINT_HARDWARE_MODULE_ID);
+            BiometricsFingerprint::setFpSensorProp(FINGERPRINT_HARDWARE_MODULE_ID, "");
             return fp_device;
         }
         // Cleanup FPC
@@ -311,16 +320,16 @@ fingerprint_device_t* BiometricsFingerprint::openHal_1() {
         }
         // Goodix
         ALOGI("Trying to load Goodix Fingerprint HAL (using gf_fingerprint hardware module id).");
-        fp_device = BiometricsFingerprint::openTheHal("gf_fingerprint");
+        fp_device = BiometricsFingerprint::openTheHal("gf_fingerprint","");
         if (fp_device == nullptr) {
             ALOGE("Failed to load fingerprint HAL with gf_fingerprint hardware module id");
         } else {
-            BiometricsFingerprint::setFpSensorProp("gf_fingerprint");
+            BiometricsFingerprint::setFpSensorProp("gf_fingerprint", "");
             return fp_device;
         }
     }
 
-    BiometricsFingerprint::setFpSensorProp("failed");
+    BiometricsFingerprint::setFpSensorProp("failed", "");
     return nullptr;
 }
 

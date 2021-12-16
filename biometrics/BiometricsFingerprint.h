@@ -63,8 +63,8 @@ public:
 
 private:
     static fingerprint_device_t* openHal_1();
-    static fingerprint_device_t* openTheHal(const char *hwmdl_name);
-    static void setFpSensorProp(std::string hwmdl_name);
+    static fingerprint_device_t* openTheHal(const char *hwmdl_name, const char *class_name);
+    static void setFpSensorProp(std::string hwmdl_name, std::string class_name);
     static void notify(const fingerprint_msg_t *msg); /* Static callback for legacy HAL implementation */
     static Return<RequestStatus> ErrorFilter(int32_t error);
     static FingerprintError VendorErrorFilter(int32_t error, int32_t* vendorCode);
