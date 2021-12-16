@@ -91,6 +91,7 @@ PRODUCT_PACKAGES += \
     fakelogprint \
     libshims_android \
     libshims_binder \
+    libshims_c_camera \
     libshims_ui \
     libwui
 
