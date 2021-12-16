@@ -30,6 +30,14 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 		setprop ro.vendor.fingerprint.supported 1
 		;;
 	"Qualcomm Technologies, Inc. MSM8937-PMI8950 QRD SKU1")
+		# Camera
+		setprop camera.lowpower.record.enable 0
+		setprop persist.camera.gyro.android 0
+		setprop persist.camera.gyro.disable 1
+		setprop persist.camera.is_type 1
+		setprop persist.ts.rtmakeup true
+		setprop media.camera.ts.monotonic 1
+		# Device Info
 		setprop ro.vendor.xiaomi.device land
 		setprop ro.vendor.xiaomi.series landtoni
 		# Fingerprint
