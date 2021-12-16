@@ -172,6 +172,13 @@ on property:ro.vendor.xiaomi.device=prada
 
 ##### prada end #####
 
+# Charger
+on property:ro.vendor.xiaomi.series=rova
+    stop vendor.hvdcp_opti
+
+on property:ro.vendor.xiaomi.series=ulysse
+    stop vendor.hvdcp_opti
+
 # Wi-Fi
 service wcnss-service /system/vendor/bin/true
     override

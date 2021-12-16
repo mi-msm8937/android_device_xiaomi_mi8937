@@ -925,6 +925,9 @@ vendor/lib/libseemore.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 
+# Charger - from daisy
+vendor/bin/hvdcp_opti
+
 # ConsumerIR - LED - from rolex
 vendor/lib64/hw/consumerir.led.so
 
