@@ -106,6 +106,7 @@ on property:ro.vendor.xiaomi.device=riva
 
 # Audio
 on property:ro.vendor.xiaomi.device=land
+    mount none /vendor/etc/land_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/land_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
     restart vendor.audio-hal
 
@@ -120,6 +121,7 @@ on property:ro.vendor.xiaomi.device=land
 
 # Audio
 on property:ro.vendor.xiaomi.device=santoni
+    mount none /vendor/etc/santoni_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/santoni_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
     restart vendor.audio-hal
 
@@ -152,6 +154,7 @@ on property:ro.vendor.xiaomi.series=landtoni
 
 # Audio
 on property:ro.vendor.xiaomi.device=prada
+    mount none /vendor/etc/prada_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/prada_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
     restart vendor.audio-hal
 
