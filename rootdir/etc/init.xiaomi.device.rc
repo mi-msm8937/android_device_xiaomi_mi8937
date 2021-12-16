@@ -109,6 +109,11 @@ on property:ro.vendor.xiaomi.device=land
     mount none /vendor/etc/land_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
     restart vendor.audio-hal
 
+# Camera
+on property:ro.vendor.xiaomi.device=land
+    setprop ro.hardware.camera land
+    restart vendor.camera-provider-2-4
+
 ##### land end #####
 
 ##### santoni begin #####
