@@ -170,6 +170,11 @@ on property:ro.vendor.xiaomi.device=prada
 on property:ro.vendor.xiaomi.device=prada
     enable vendor.hvdcp_opti
 
+# IR (Temp)
+on property:ro.vendor.xiaomi.device=prada
+    setprop ro.hardware.consumerir led
+    restart vendor.ir-hal-1-0
+
 # Sensors
 on property:ro.vendor.xiaomi.device=prada
     mount none /vendor/etc/sensors/prada_sensor_def_qcomdev.conf /vendor/etc/sensors/sensor_def_qcomdev.conf bind
