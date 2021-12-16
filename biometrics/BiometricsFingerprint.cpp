@@ -31,6 +31,7 @@
 #include <unistd.h>
 
 extern int fingerprint_type;
+extern bool fp_type_2_is_goodix;
 
 namespace android {
 namespace hardware {
@@ -50,6 +51,9 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
     switch (fingerprint_type) {
+        case 2:
+            mDevice = openHal_2();
+            break;
         case 1:
             mDevice = openHal_1();
             break;
@@ -330,6 +334,20 @@ fingerprint_device_t* BiometricsFingerprint::openHal_1() {
     }
 
     BiometricsFingerprint::setFpSensorProp("failed", "");
+    return nullptr;
+}
+
+fingerprint_device_t* BiometricsFingerprint::openHal_2() {
+    fingerprint_device_t *fp_device;
+
+    ALOGI("Trying to load fingerprint HAL.");
+    fp_device = BiometricsFingerprint::openTheHal(FINGERPRINT_HARDWARE_MODULE_ID, "");
+    if (fp_device == nullptr) {
+        ALOGE("Failed to load fingerprint HAL.");
+    } else {
+        return fp_device;
+    }
+
     return nullptr;
 }
 
