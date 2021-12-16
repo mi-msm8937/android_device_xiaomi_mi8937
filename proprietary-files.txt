@@ -1453,5 +1453,14 @@ etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG_c3a.xml:vendor/etc/qdcm_calib_dat
 etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3b.xml:vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE_c3b.xml
 etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3b.xml:vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg_c3b.xml
 
+# Display calibration - from land
+vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Tianma.xml|2ead0723616a9c30281bbd930206edf68fd79421
+vendor/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml|7e9197eea621ff4661c8216a6b536e88a0488bfa
+
+# Display calibration - from santoni
+vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
+vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml
+vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml
+
 # Wi-Fi - from daisy
 vendor/bin/wcnss_service:vendor/bin/wcnss_service_daisy
