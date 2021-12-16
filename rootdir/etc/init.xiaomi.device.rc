@@ -130,6 +130,13 @@ on property:ro.vendor.xiaomi.device=santoni
     mount none /vendor/etc/santoni_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
     restart vendor.audio-hal
 
+# Camera
+on property:ro.vendor.xiaomi.device=santoni
+    setprop ro.hardware.camera rova
+    stop qcamerasvr
+    enable rova_qcamerasvr
+    restart vendor.camera-provider-2-4
+
 ##### santoni end #####
 
 ##### landtoni begin #####
