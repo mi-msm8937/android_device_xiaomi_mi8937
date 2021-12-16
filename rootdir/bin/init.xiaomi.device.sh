@@ -48,6 +48,9 @@ case "$(cat /sys/firmware/devicetree/base/model)" in
 		fi
 		;;
 	"Qualcomm Technologies, Inc. MSM8940-PMI8950 QRD SKU7")
+		# Fingerprint
+		setprop vendor.fingerprint.goodix.disable_notify_cancel_hack 1
+		# Device Info
 		setprop ro.vendor.xiaomi.device santoni
 		setprop ro.vendor.xiaomi.series landtoni
 		# Fingerprint
