@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    xiaomi_prada_overlay_lineage \
     xiaomi_rolex_overlay_lineage \
     xiaomi_riva_overlay_lineage
 
