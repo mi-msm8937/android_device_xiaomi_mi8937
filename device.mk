@@ -102,5 +102,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Wifi
+PRODUCT_PACKAGES += \
+    WifiOverlay_prada
+
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/mi8937/mi8937-vendor.mk)
