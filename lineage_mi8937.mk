@@ -17,6 +17,7 @@ $(call inherit-product, device/xiaomi/mi8937/device.mk)
 
 # Overlays
 PRODUCT_PACKAGES += \
+    xiaomi_landtoni_overlay_lineage \
     xiaomi_ulysse_overlay_lineage
 
 # Overlays
