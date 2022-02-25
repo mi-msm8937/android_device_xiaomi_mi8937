@@ -70,6 +70,7 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
+    init.baseband.sh \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
 

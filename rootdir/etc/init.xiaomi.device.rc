@@ -58,6 +58,10 @@ on property:ro.vendor.xiaomi.device=riva
     mount none /vendor/etc/riva_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
     restart vendor.audio-hal
 
+# Baseband
+on property:ro.vendor.xiaomi.series=rova
+    enable baseband-sh
+
 # IR
 on property:ro.vendor.xiaomi.device=rolex
     chown system system /sys/class/leds/infrared/transmit
