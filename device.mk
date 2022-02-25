@@ -104,6 +104,7 @@ PRODUCT_PACKAGES += \
 # Rootdir
 PRODUCT_PACKAGES += \
     init.baseband.sh \
+    init.baseband.proxy.rc \
     init.goodix.sh \
     init.xiaomi.device.rc \
     init.xiaomi.device.sh
