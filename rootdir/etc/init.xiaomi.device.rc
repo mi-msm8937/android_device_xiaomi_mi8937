@@ -130,9 +130,17 @@ on property:ro.vendor.xiaomi.device=santoni
     mount none /vendor/etc/santoni_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
     restart vendor.audio-hal
 
+# Baseband
+on property:ro.vendor.xiaomi.device=santoni
+    enable baseband-sh
+
 ##### santoni end #####
 
 ##### landtoni begin #####
+
+# HVDCP
+on property:ro.vendor.xiaomi.series=landtoni
+    enable vendor.hvdcp_opti
 
 # IR
 on property:ro.vendor.xiaomi.series=landtoni
@@ -154,6 +162,10 @@ on property:ro.vendor.xiaomi.series=landtoni
 on property:ro.vendor.xiaomi.device=prada
     mount none /vendor/etc/prada_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
     restart vendor.audio-hal
+
+# HVDCP
+on property:ro.vendor.xiaomi.device=prada
+    enable vendor.hvdcp_opti
 
 # Sensors
 on property:ro.vendor.xiaomi.device=prada
