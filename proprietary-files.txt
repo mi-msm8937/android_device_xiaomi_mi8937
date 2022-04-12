@@ -1,6 +1,5 @@
 # ugg Package version: ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys
 # vince Package version: vince-user 8.1.0 OPM1.171019.019 V11.0.2.0.OEGMIXM release-keys
-# daisy Package version: daisy-user 10 QKQ1.191002.002 V11.0.18.0.QDLMIXM release-keys
 # rolex Package version: rolex-user 7.1.2 N2G47H V10.2.3.0.NCCMIXM release-keys
 # riva Package version: riva-user 7.1.2 N2G47H V10.1.1.0.NCKMIFI release-keys
 # riva Oreo Package version: Xiaomi/riva/riva:8.1.0/OPM1.171019.026/V11.0.2.0.OCKMIXM:user/release-keys
@@ -1491,6 +1490,3 @@ vendor/etc/qdcm_calib_data_nt35521s_HD720p_video_EBBG.xml|7e9197eea621ff4661c821
 vendor/etc/qdcm_calib_data_hx8394F_HD720p_video_BOE.xml
 vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_EbbgDJN.xml
 vendor/etc/qdcm_calib_data_ili9881c_HD720p_video_Ebbg.xml
-
-# Wi-Fi - from daisy
-vendor/bin/wcnss_service:vendor/bin/wcnss_service_daisy
