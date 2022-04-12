@@ -17,6 +17,9 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /vendor/bin/land_mm-qcamera-daemon=23 \
     /vendor/bin/prada_mm-qcamera-daemon=23
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_mi8937
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_mi8937
