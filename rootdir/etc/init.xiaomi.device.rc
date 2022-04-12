@@ -26,7 +26,7 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
 on property:ro.vendor.xiaomi.series=ulysse
     mount none /vendor/etc/ulysse_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/ulysse_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
-    restart vendor.audio-hal
+    restart vendor.audio-hal-2-0
 
 # Camera
 service ulysse_qcamerasvr /system/vendor/bin/ulysse_mm-qcamera-daemon
@@ -61,12 +61,12 @@ on property:ro.vendor.xiaomi.series=ulysse
 on property:ro.vendor.xiaomi.device=rolex
     mount none /vendor/etc/rova_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/rolex_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
-    restart vendor.audio-hal
+    restart vendor.audio-hal-2-0
 
 on property:ro.vendor.xiaomi.device=riva
     mount none /vendor/etc/rova_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/riva_mixer_paths_qrd_sku2.xml /vendor/etc/mixer_paths_qrd_sku2.xml bind
-    restart vendor.audio-hal
+    restart vendor.audio-hal-2-0
 
 # Baseband
 on property:ro.vendor.xiaomi.series=rova
@@ -116,7 +116,7 @@ on property:ro.vendor.xiaomi.device=riva
 on property:ro.vendor.xiaomi.device=land
     mount none /vendor/etc/land_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/land_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
-    restart vendor.audio-hal
+    restart vendor.audio-hal-2-0
 
 # Camera
 service land_qcamerasvr /system/vendor/bin/land_mm-qcamera-daemon
@@ -140,7 +140,7 @@ on property:ro.vendor.xiaomi.device=land
 on property:ro.vendor.xiaomi.device=santoni
     mount none /vendor/etc/santoni_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/santoni_mixer_paths_qrd_sku1.xml /vendor/etc/mixer_paths_qrd_sku1.xml bind
-    restart vendor.audio-hal
+    restart vendor.audio-hal-2-0
 
 # Camera
 on property:ro.vendor.xiaomi.device=santoni
@@ -182,7 +182,7 @@ on property:ro.vendor.xiaomi.series=landtoni
 on property:ro.vendor.xiaomi.device=prada
     mount none /vendor/etc/prada_acdbdata /vendor/etc/acdbdata bind
     mount none /vendor/etc/prada_mixer_paths_mtp.xml /vendor/etc/mixer_paths_mtp.xml bind
-    restart vendor.audio-hal
+    restart vendor.audio-hal-2-0
 
 # Camera
 on property:ro.vendor.xiaomi.device=prada && property:sys.boot_completed=1
