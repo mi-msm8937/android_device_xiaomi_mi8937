@@ -5,8 +5,10 @@ type gx_fpd_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(gx_fpd)
 
 # Allow Binder communication
+binder_use(gx_fpd)
 vndbinder_use(gx_fpd)
 binder_call(gx_fpd, hal_fingerprint_default)
+binder_call(gx_fpd, servicemanager)
 
 # Add services
 add_service(gx_fpd, gx_fpd_service)
