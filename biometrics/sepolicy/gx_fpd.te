@@ -40,6 +40,10 @@ set_prop(gx_fpd, system_prop)
 get_prop(gx_fpd, vendor_fingerprint_prop);
 set_prop(gx_fpd, vendor_fingerprint_prop);
 
-# Ignore all logging requests
-dontaudit gx_fpd storage_file:dir search;
-dontaudit gx_fpd mnt_user_file:dir r_dir_perms;
+# Allow access to files
+allow gx_fpd storage_file:dir r_dir_perms;
+allow gx_fpd mnt_user_file:dir r_dir_perms;
+allow gx_fpd media_rw_data_file:dir r_dir_perms;
+allow gx_fpd mnt_user_file:lnk_file r_file_perms;
+allow gx_fpd sdcardfs:dir r_dir_perms;
+allow gx_fpd storage_file:lnk_file r_file_perms;
