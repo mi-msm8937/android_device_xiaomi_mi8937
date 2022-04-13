@@ -8,6 +8,10 @@
 #include <libinit_utils.h>
 #include <libinit_variant.h>
 
+#ifdef USE_EXTRAS
+#include <libinit_extras.h>
+#endif
+
 #include "vendor_init.h"
 
 #include <android-base/file.h>
@@ -124,4 +128,7 @@ static void determine_device()
 void vendor_load_properties() {
     determine_device();
     set_dalvik_heap();
+#ifdef USE_EXTRAS
+    load_extras();
+#endif
 }
