@@ -22,6 +22,7 @@ static const variant_info_t ugglite_info = {
     .marketname = "",
     .model = "Redmi Note 5A",
     .build_fingerprint = "xiaomi/ugglite/ugglite:7.1.2/N2G47H/V11.0.3.0.NDFMIXM:user/release-keys",
+    .vendor_security_patch = "2019-08-01"
 };
 
 static const variant_info_t ugg_info = {
@@ -30,6 +31,7 @@ static const variant_info_t ugg_info = {
     .marketname = "",
     .model = "Redmi Note 5A",
     .build_fingerprint = "xiaomi/ugg/ugg:7.1.2/N2G47H/V11.0.2.0.NDKMIXM:user/release-keys",
+    .vendor_security_patch = "2019-08-01"
 };
 
 static const variant_info_t rolex_info = {
@@ -38,6 +40,7 @@ static const variant_info_t rolex_info = {
     .marketname = "",
     .model = "Redmi 4A",
     .build_fingerprint = "Xiaomi/rolex/rolex:7.1.2/N2G47H/V10.2.3.0.NCCMIXM:user/release-keys",
+    .vendor_security_patch = "2018-07-01"
 };
 
 static const variant_info_t riva_info = {
@@ -46,6 +49,7 @@ static const variant_info_t riva_info = {
     .marketname = "",
     .model = "Redmi 5A",
     .build_fingerprint = "Xiaomi/riva/riva:7.1.2/N2G47H/V10.1.1.0.NCKMIFI:user/release-keys",
+    .vendor_security_patch = "2018-07-01"
 };
 
 static const variant_info_t land_info = {
@@ -54,6 +58,7 @@ static const variant_info_t land_info = {
     .marketname = "",
     .model = "Redmi 3S",
     .build_fingerprint = "Xiaomi/land/land:6.0.1/MMB29M/V10.2.2.0.MALMIXM:user/release-keys",
+    .vendor_security_patch = "2017-04-01"
 };
 
 static const variant_info_t santoni_info = {
@@ -62,6 +67,7 @@ static const variant_info_t santoni_info = {
     .marketname = "",
     .model = "Redmi 4X",
     .build_fingerprint = "Xiaomi/santoni/santoni:7.1.2/N2G47H/V11.0.2.0.NAMMIXM:user/release-keys",
+    .vendor_security_patch = "2018-10-01"
 };
 
 static const variant_info_t prada_info = {
@@ -70,6 +76,7 @@ static const variant_info_t prada_info = {
     .marketname = "",
     .model = "Redmi 4",
     .build_fingerprint = "Xiaomi/prada/prada:6.0.1/MMB29M/V10.2.2.0.MCEMIXM:user/release-keys",
+    .vendor_security_patch = "2018-08-01"
 };
 
 static void determine_device_land(const std::string &proc_cmdline)
