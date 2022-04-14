@@ -16,6 +16,9 @@
 
 #include <android-base/file.h>
 
+#define CTS_FP "Xiaomi/land/land:6.0.1/MMB29M/V10.2.2.0.MALMIXM:user/release-keys"
+#define CTS_SP "2017-04-01"
+
 static const variant_info_t ugglite_info = {
     .brand = "xiaomi",
     .device = "ugglite",
@@ -138,4 +141,8 @@ void vendor_load_properties() {
 #ifdef USE_EXTRAS
     load_extras();
 #endif
+    set_ro_build_prop("fingerprint", CTS_FP);
+    property_override("ro.bootimage.build.fingerprint", CTS_FP);
+    property_override("ro.build.description", fingerprint_to_description(CTS_FP));
+    property_override("ro.vendor.build.security_patch", CTS_SP);
 }
