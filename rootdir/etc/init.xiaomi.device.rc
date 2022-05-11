@@ -40,6 +40,8 @@ on property:ro.vendor.xiaomi.series=ulysse
     setprop ro.hardware.camera ulysse
     stop qcamerasvr
     enable ulysse_qcamerasvr
+
+on property:init.svc.ulysse_qcamerasvr=running
     restart vendor.camera-provider-2-4
 
 # IR
@@ -85,6 +87,8 @@ on property:ro.vendor.xiaomi.series=rova
     stop qcamerasvr
     mount none /vendor/etc/camera/rova_camera_config.xml /vendor/etc/camera/camera_config.xml bind
     enable rova_qcamerasvr
+
+on property:init.svc.rova_qcamerasvr=running
     restart vendor.camera-provider-2-4
 
 # IR
@@ -130,6 +134,8 @@ on property:ro.vendor.xiaomi.device=land
     setprop ro.hardware.camera land
     stop qcamerasvr
     enable land_qcamerasvr
+
+on property:init.svc.land_qcamerasvr=running
     restart vendor.camera-provider-2-4
 
 ##### land end #####
@@ -148,6 +154,8 @@ on property:ro.vendor.xiaomi.device=santoni
     stop qcamerasvr
     mount none /vendor/etc/camera/santoni_camera_config.xml /vendor/etc/camera/camera_config.xml bind
     enable rova_qcamerasvr
+
+on property:init.svc.rova_qcamerasvr=running
     restart vendor.camera-provider-2-4
 
 ##### santoni end #####
