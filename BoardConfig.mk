@@ -13,11 +13,7 @@ DEVICE_PATH := device/xiaomi/mi8937
 TARGET_OTA_ASSERT_DEVICE := mi8937,landtoni,land,santoni,prada,ulova,ulysse,ugglite,ugg,rova,rolex,riva
 
 # Camera
-TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/vendor/bin/land_mm-qcamera-daemon=23 \
-    /system/vendor/bin/prada_mm-qcamera-daemon=23 \
-    /vendor/bin/land_mm-qcamera-daemon=23 \
-    /vendor/bin/prada_mm-qcamera-daemon=23
+MI8937_CAM_USE_RENAMED_BLOBS_L := true
 
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
